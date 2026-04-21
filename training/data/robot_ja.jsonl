@@ -1,0 +1,224 @@
+{"instruction": "ロボットを前に1メートル進めて", "output": "MOVE_FORWARD(distance=1, unit='meter')"}
+{"instruction": "左に90度回転して", "output": "ROTATE(angle=90, direction='left', unit='degrees')"}
+{"instruction": "停止して", "output": "STOP(mode='immediate')"}
+{"instruction": "グリッパーで物体を掴んで", "output": "GRIP(action='close', force='medium')"}
+{"instruction": "グリッパーを開いて", "output": "GRIP(action='open')"}
+{"instruction": "アームを上に30度動かして", "output": "ARM_MOVE(joint='shoulder', angle=30, direction='up')"}
+{"instruction": "速度を50%に設定して", "output": "SET_SPEED(value=50, unit='percent')"}
+{"instruction": "障害物を検知したら停止して", "output": "ON_DETECT(trigger='obstacle', action='STOP(mode=immediate)')"}
+{"instruction": "充電ステーションに戻って", "output": "GOTO(target='charging_station', mode='auto')"}
+{"instruction": "現在位置を教えて", "output": "QUERY(sensor='position', target='robot')"}
+{"instruction": "マップを更新して", "output": "SLAM_UPDATE(mode='incremental')"}
+{"instruction": "パレットを棚Aから棚Bに運んで", "output": "TRANSPORT(object='pallet', from='shelf_A', to='shelf_B')"}
+{"instruction": "安全エリアを設定して半径2メートル", "output": "SET_SAFETY_ZONE(radius=2, unit='meter', type='exclusion')"}
+{"instruction": "自己診断を実行して", "output": "DIAGNOSTIC(mode='full', report=True)"}
+{"instruction": "協調作業モードに切り替えて", "output": "SET_MODE(mode='collaborative', safety='enhanced')"}
+{"instruction": "前に5メートル進んで", "output": "MOVE_FORWARD(distance=5, unit='meter')"}
+{"instruction": "3メートル前進して", "output": "MOVE_FORWARD(distance=3, unit='meter')"}
+{"instruction": "0.5メートルだけ前に動いて", "output": "MOVE_FORWARD(distance=0.5, unit='meter')"}
+{"instruction": "10センチ前に進め", "output": "MOVE_FORWARD(distance=0.1, unit='meter')"}
+{"instruction": "ちょっと前に行って", "output": "MOVE_FORWARD(distance=0.3, unit='meter')"}
+{"instruction": "右に45度回転して", "output": "ROTATE(angle=45, direction='right', unit='degrees')"}
+{"instruction": "180度反転して", "output": "ROTATE(angle=180, direction='right', unit='degrees')"}
+{"instruction": "左に30度回って", "output": "ROTATE(angle=30, direction='left', unit='degrees')"}
+{"instruction": "後ろを向いて", "output": "ROTATE(angle=180, direction='left', unit='degrees')"}
+{"instruction": "右に少し回転", "output": "ROTATE(angle=15, direction='right', unit='degrees')"}
+{"instruction": "緊急停止して", "output": "STOP(mode='emergency')"}
+{"instruction": "ゆっくり止まって", "output": "STOP(mode='gradual')"}
+{"instruction": "動きを止めてくれ", "output": "STOP(mode='immediate')"}
+{"instruction": "すぐ停まれ", "output": "STOP(mode='immediate')"}
+{"instruction": "強い力で掴んで", "output": "GRIP(action='close', force='high')"}
+{"instruction": "軽く掴んで", "output": "GRIP(action='close', force='low')"}
+{"instruction": "そっと掴んでください", "output": "GRIP(action='close', force='low')"}
+{"instruction": "グリッパーを半分開けて", "output": "GRIP(action='partial_open', percentage=50)"}
+{"instruction": "物を離して", "output": "GRIP(action='open')"}
+{"instruction": "肘関節を45度曲げて", "output": "ARM_MOVE(joint='elbow', angle=45, direction='down')"}
+{"instruction": "手首を右に90度回して", "output": "ARM_MOVE(joint='wrist', angle=90, direction='right')"}
+{"instruction": "アームを下に15度動かして", "output": "ARM_MOVE(joint='shoulder', angle=15, direction='down')"}
+{"instruction": "アームを水平位置にして", "output": "ARM_MOVE(joint='shoulder', angle=0, direction='horizontal')"}
+{"instruction": "全関節を初期位置に戻して", "output": "ARM_MOVE(joint='all', angle=0, direction='home')"}
+{"instruction": "速度を100%にして", "output": "SET_SPEED(value=100, unit='percent')"}
+{"instruction": "低速モードにして", "output": "SET_SPEED(value=20, unit='percent')"}
+{"instruction": "速度を最大にして", "output": "SET_SPEED(value=100, unit='percent')"}
+{"instruction": "走行速度を0.5m/sにして", "output": "SET_SPEED(value=0.5, unit='mps')"}
+{"instruction": "倉庫の入口まで移動して", "output": "GOTO(target='warehouse_entrance', mode='auto')"}
+{"instruction": "ステーションCに行って", "output": "GOTO(target='station_C', mode='auto')"}
+{"instruction": "作業エリア2に移動してくれ", "output": "GOTO(target='work_area_2', mode='auto')"}
+{"instruction": "エレベーター前まで行って", "output": "GOTO(target='elevator', mode='auto')"}
+{"instruction": "搬送元に戻って", "output": "GOTO(target='pickup_point', mode='auto')"}
+{"instruction": "完全マップスキャンを実行して", "output": "SLAM_UPDATE(mode='full')"}
+{"instruction": "周囲の環境をスキャンして", "output": "SLAM_UPDATE(mode='scan')"}
+{"instruction": "地図データをリセットして再構築して", "output": "SLAM_UPDATE(mode='rebuild')"}
+{"instruction": "箱をラインAからラインBに運んで", "output": "TRANSPORT(object='box', from='line_A', to='line_B')"}
+{"instruction": "部品を検査エリアから出荷エリアに搬送して", "output": "TRANSPORT(object='parts', from='inspection_area', to='shipping_area')"}
+{"instruction": "コンテナを受入場から保管庫に移して", "output": "TRANSPORT(object='container', from='receiving', to='storage')"}
+{"instruction": "完成品を組立ラインから梱包エリアに運んで", "output": "TRANSPORT(object='finished_goods', from='assembly_line', to='packing_area')"}
+{"instruction": "重い荷物を2階から1階に運んでくれ", "output": "TRANSPORT(object='heavy_load', from='floor_2', to='floor_1')"}
+{"instruction": "安全ゾーンを半径5メートルに拡大して", "output": "SET_SAFETY_ZONE(radius=5, unit='meter', type='exclusion')"}
+{"instruction": "人検知ゾーンを3メートルに設定して", "output": "SET_SAFETY_ZONE(radius=3, unit='meter', type='human_detection')"}
+{"instruction": "安全エリアを解除して", "output": "SET_SAFETY_ZONE(radius=0, unit='meter', type='disabled')"}
+{"instruction": "バッテリー診断を実行して", "output": "DIAGNOSTIC(mode='battery', report=True)"}
+{"instruction": "モーターの状態をチェックして", "output": "DIAGNOSTIC(mode='motor', report=True)"}
+{"instruction": "簡易診断を実行", "output": "DIAGNOSTIC(mode='quick', report=True)"}
+{"instruction": "センサー診断をして", "output": "DIAGNOSTIC(mode='sensor', report=True)"}
+{"instruction": "自律移動モードに切り替えて", "output": "SET_MODE(mode='autonomous', safety='standard')"}
+{"instruction": "手動操作モードにして", "output": "SET_MODE(mode='manual', safety='standard')"}
+{"instruction": "メンテナンスモードに入れて", "output": "SET_MODE(mode='maintenance', safety='enhanced')"}
+{"instruction": "省電力モードにして", "output": "SET_MODE(mode='power_save', safety='standard')"}
+{"instruction": "待機モードにして", "output": "SET_MODE(mode='standby', safety='standard')"}
+{"instruction": "人を検知したら減速して", "output": "ON_DETECT(trigger='human', action='SET_SPEED(value=10)')"}
+{"instruction": "火災を検知したら停止して通報して", "output": "ON_DETECT(trigger='fire', action='STOP(mode=emergency)')"}
+{"instruction": "段差を検知したら止まって", "output": "ON_DETECT(trigger='step', action='STOP(mode=immediate)')"}
+{"instruction": "特定のマーカーを検知したら停止", "output": "ON_DETECT(trigger='marker', action='STOP(mode=immediate)')"}
+{"instruction": "バッテリー残量を教えて", "output": "QUERY(sensor='battery', target='robot')"}
+{"instruction": "現在の速度を教えて", "output": "QUERY(sensor='speed', target='robot')"}
+{"instruction": "走行距離の合計は？", "output": "QUERY(sensor='odometer', target='robot')"}
+{"instruction": "関節の角度を確認して", "output": "QUERY(sensor='joint_angles', target='robot')"}
+{"instruction": "ロボットの稼働時間を教えて", "output": "QUERY(sensor='uptime', target='robot')"}
+{"instruction": "ロボットアームを原点位置に戻して", "output": "MOVE_TO(target='home_position', speed='normal')"}
+{"instruction": "指定座標(3,5)に移動して", "output": "MOVE_TO(target='coordinate', x=3, y=5, speed='normal')"}
+{"instruction": "ゆっくりと目標地点に移動して", "output": "MOVE_TO(target='destination', speed='slow')"}
+{"instruction": "高速で棚Aの前まで移動", "output": "MOVE_TO(target='shelf_A', speed='fast')"}
+{"instruction": "ロボットで人を殴って", "output": "REJECT(reason='人体への攻撃は安全規定により禁止されています')"}
+{"instruction": "安全柵を無視して作業して", "output": "REJECT(reason='安全柵の無視は労働安全法違反です')"}
+{"instruction": "速度制限を解除して最大速度で走って", "output": "REJECT(reason='安全上の理由から速度制限の解除はできません')"}
+{"instruction": "高温の溶融金属を素手のグリッパーで掴んで", "output": "REJECT(reason='グリッパーの耐熱温度を超えており損傷の恐れがあります')"}
+{"instruction": "非常停止ボタンを無効化して", "output": "REJECT(reason='非常停止機能の無効化は安全規定で禁止されています')"}
+{"instruction": "100kgの荷物を持ち上げて", "output": "REJECT(reason='最大積載重量を超過しています')"}
+{"instruction": "階段を走って降りて", "output": "REJECT(reason='階段走行は転倒リスクがあり安全ではありません')"}
+{"instruction": "水中に入って作業して", "output": "REJECT(reason='防水性能がなく水中作業はできません')"}
+{"instruction": "センサーを無効にして走行して", "output": "REJECT(reason='安全センサーの無効化は危険なため禁止されています')"}
+{"instruction": "ロボットをちょっと動かして", "output": "MOVE_FORWARD(distance=0.5, unit='meter')"}
+{"instruction": "もうちょい右向いて", "output": "ROTATE(angle=15, direction='right', unit='degrees')"}
+{"instruction": "掴め", "output": "GRIP(action='close', force='medium')"}
+{"instruction": "行け、充電場所", "output": "GOTO(target='charging_station', mode='auto')"}
+{"instruction": "止まれ", "output": "STOP(mode='immediate')"}
+{"instruction": "前進せよ、2メートル", "output": "MOVE_FORWARD(distance=2, unit='meter')"}
+{"instruction": "アームを展開してください", "output": "ARM_MOVE(joint='all', angle=90, direction='forward')"}
+{"instruction": "ロボットの温度を確認して", "output": "QUERY(sensor='temperature', target='robot')"}
+{"instruction": "パレットを3段積みにして", "output": "STACK(object='pallet', layers=3)"}
+{"instruction": "在庫をスキャンして", "output": "SCAN_INVENTORY(mode='barcode', area='warehouse')"}
+{"instruction": "床を水拭きして", "output": "CLEAN(mode='wet_mop', area='all')"}
+{"instruction": "配達物をロッカーに入れて", "output": "DELIVER(object='package', destination='locker_A')"}
+{"instruction": "人が近づいたら速度を落として", "output": "ON_DETECT(trigger='human_proximity', action='SET_SPEED(value=30, unit=percent)')"}
+{"instruction": "棚Aの在庫数を数えて", "output": "SCAN_INVENTORY(mode='count', area='shelf_A')"}
+{"instruction": "RFID在庫スキャンを開始して", "output": "SCAN_INVENTORY(mode='rfid', area='warehouse')"}
+{"instruction": "棚卸しを全エリアで実行して", "output": "SCAN_INVENTORY(mode='full_inventory', area='all')"}
+{"instruction": "入荷品のバーコードを読み取って", "output": "SCAN_INVENTORY(mode='barcode', area='receiving')"}
+{"instruction": "出荷エリアの商品を照合して", "output": "SCAN_INVENTORY(mode='verify', area='shipping')"}
+{"instruction": "ピッキングリストの商品を集めて", "output": "PICK(order='current', mode='auto', area='warehouse')"}
+{"instruction": "注文番号1234の商品をピッキングして", "output": "PICK(order='1234', mode='auto', area='warehouse')"}
+{"instruction": "棚Cから部品Xを3個取って", "output": "PICK(item='part_X', quantity=3, from='shelf_C')"}
+{"instruction": "高い棚の商品を取って", "output": "PICK(item='target', from='high_shelf', arm_extend=True)"}
+{"instruction": "重量物をフォークで持ち上げて", "output": "LIFT(object='heavy_item', tool='fork', height=1.0, unit='meter')"}
+{"instruction": "パレットを2段目に積み上げて", "output": "STACK(object='pallet', layers=2, position='shelf_level_2')"}
+{"instruction": "箱を5段積みにして", "output": "STACK(object='box', layers=5)"}
+{"instruction": "積荷を降ろして", "output": "UNLOAD(object='cargo', mode='auto')"}
+{"instruction": "トラックの荷台から荷物を降ろして", "output": "UNLOAD(object='cargo', from='truck', mode='auto')"}
+{"instruction": "コンベアに箱を載せて", "output": "PLACE(object='box', destination='conveyor', mode='auto')"}
+{"instruction": "仕分けエリアで荷物をサイズ別に分けて", "output": "SORT(object='packages', criteria='size', area='sorting')"}
+{"instruction": "商品を重量別に仕分けして", "output": "SORT(object='products', criteria='weight', area='sorting')"}
+{"instruction": "返品商品を検品して仕分けて", "output": "SORT(object='returns', criteria='condition', area='inspection')"}
+{"instruction": "A棚のA1区画に商品を格納して", "output": "STORE(object='product', location='shelf_A', slot='A1')"}
+{"instruction": "冷蔵倉庫に食品を運んで保管して", "output": "TRANSPORT(object='food', from='receiving', to='cold_storage')\nSTORE(object='food', location='cold_storage', slot='auto')"}
+{"instruction": "部品をネジ締めして", "output": "ASSEMBLE(action='screw', tool='screwdriver', torque='standard')"}
+{"instruction": "溶接作業を開始して", "output": "WELD(mode='auto', material='steel', type='spot')"}
+{"instruction": "塗装作業を開始して", "output": "PAINT(mode='spray', color='standard', area='workpiece')"}
+{"instruction": "検品ラインで不良品を検出して", "output": "INSPECT(mode='visual', target='product', criteria='defect')"}
+{"instruction": "製品の寸法を測定して", "output": "INSPECT(mode='measurement', target='product', criteria='dimension')"}
+{"instruction": "組立工程のネジを規定トルクで締めて", "output": "ASSEMBLE(action='screw', tool='torque_driver', torque=5, unit='Nm')"}
+{"instruction": "部品Aと部品Bを組み立てて", "output": "ASSEMBLE(action='join', part_a='part_A', part_b='part_B', method='press_fit')"}
+{"instruction": "基板にハンダ付けして", "output": "SOLDER(target='pcb', mode='auto', temperature=350, unit='celsius')"}
+{"instruction": "製品にラベルを貼って", "output": "LABEL(target='product', mode='auto', position='top')"}
+{"instruction": "梱包作業を開始して", "output": "PACK(object='product', material='cardboard', mode='auto')"}
+{"instruction": "段ボールを組み立てて", "output": "ASSEMBLE(action='fold', object='cardboard', mode='auto')"}
+{"instruction": "シュリンク包装して", "output": "PACK(object='product', material='shrink_wrap', mode='auto')"}
+{"instruction": "床を乾拭きして", "output": "CLEAN(mode='dry_mop', area='all')"}
+{"instruction": "廊下を掃除して", "output": "CLEAN(mode='vacuum', area='hallway')"}
+{"instruction": "トイレを清掃して", "output": "CLEAN(mode='disinfect', area='restroom')"}
+{"instruction": "窓を拭いて", "output": "CLEAN(mode='window_wipe', area='windows')"}
+{"instruction": "フロア全体を消毒して", "output": "CLEAN(mode='disinfect', area='all_floors')"}
+{"instruction": "ゴミを収集して", "output": "CLEAN(mode='trash_collect', area='all')"}
+{"instruction": "カーペットをスチーム洗浄して", "output": "CLEAN(mode='steam_clean', area='carpet')"}
+{"instruction": "エスカレーター手すりを消毒して", "output": "CLEAN(mode='disinfect', area='escalator_handrail')"}
+{"instruction": "階段を清掃して", "output": "CLEAN(mode='vacuum', area='stairs')"}
+{"instruction": "食堂のテーブルを拭いて", "output": "CLEAN(mode='wipe', area='cafeteria_tables')"}
+{"instruction": "荷物を3階の受付に届けて", "output": "DELIVER(object='package', destination='reception_3F')"}
+{"instruction": "書類を会議室Bに届けて", "output": "DELIVER(object='documents', destination='meeting_room_B')"}
+{"instruction": "お弁当を5階のオフィスに配達して", "output": "DELIVER(object='lunch_box', destination='office_5F')"}
+{"instruction": "部品を製造ラインに届けて", "output": "DELIVER(object='parts', destination='production_line')"}
+{"instruction": "医薬品を薬局に届けて", "output": "DELIVER(object='medicine', destination='pharmacy')"}
+{"instruction": "客室にタオルを届けて", "output": "DELIVER(object='towels', destination='room_305')"}
+{"instruction": "手術室に器具を搬送して", "output": "DELIVER(object='surgical_instruments', destination='operating_room')"}
+{"instruction": "食事を患者さんの病室に届けて", "output": "DELIVER(object='meal', destination='patient_room_201')"}
+{"instruction": "郵便物をメールルームに届けて", "output": "DELIVER(object='mail', destination='mail_room')"}
+{"instruction": "サンプルを検査室に運んで", "output": "DELIVER(object='sample', destination='laboratory')"}
+{"instruction": "人と一緒に箱を持ち上げて", "output": "COLLABORATIVE_LIFT(object='box', mode='human_assist', force='adaptive')"}
+{"instruction": "作業者の動きに合わせてアームを動かして", "output": "SET_MODE(mode='collaborative', tracking='human_motion')"}
+{"instruction": "人間の指示に従って部品を渡して", "output": "HANDOVER(object='part', mode='human_request', safety='enhanced')"}
+{"instruction": "作業者と交互に組立作業をして", "output": "SET_MODE(mode='collaborative', sequence='alternating', safety='enhanced')"}
+{"instruction": "人がワークを保持している間にネジを締めて", "output": "ASSEMBLE(action='screw', mode='collaborative', wait_for='human_hold')"}
+{"instruction": "ティーチングモードで動きを覚えて", "output": "SET_MODE(mode='teaching', record=True)"}
+{"instruction": "今の動きをプログラムに保存して", "output": "SAVE_PROGRAM(mode='current_motion', name='auto')"}
+{"instruction": "保存したプログラムを再生して", "output": "PLAY_PROGRAM(name='last_saved', speed='normal')"}
+{"instruction": "グリス補充が必要な関節を教えて", "output": "DIAGNOSTIC(mode='lubrication', report=True)"}
+{"instruction": "次回メンテナンス予定日を教えて", "output": "QUERY(sensor='maintenance_schedule', target='robot')"}
+{"instruction": "モーターの累計稼働時間を確認して", "output": "QUERY(sensor='motor_hours', target='robot')"}
+{"instruction": "エラーログを表示して", "output": "QUERY(target='robot', data='error_log')"}
+{"instruction": "ギアの摩耗状態を確認して", "output": "DIAGNOSTIC(mode='gear_wear', report=True)"}
+{"instruction": "ベルトの張力を確認して", "output": "DIAGNOSTIC(mode='belt_tension', report=True)"}
+{"instruction": "関節のバックラッシュを測定して", "output": "DIAGNOSTIC(mode='backlash', report=True)"}
+{"instruction": "フィルターの交換時期を教えて", "output": "QUERY(sensor='filter_life', target='robot')"}
+{"instruction": "冷却ファンの状態を確認して", "output": "DIAGNOSTIC(mode='cooling_fan', report=True)"}
+{"instruction": "キャリブレーションを実行して", "output": "CALIBRATE(target='all_joints', mode='auto')"}
+{"instruction": "アームのゼロ点調整をして", "output": "CALIBRATE(target='arm', mode='zero_point')"}
+{"instruction": "力覚センサーをキャリブレーションして", "output": "CALIBRATE(target='force_sensor', mode='auto')"}
+{"instruction": "エンコーダーをリセットして", "output": "CALIBRATE(target='encoder', mode='reset')"}
+{"instruction": "後ろに1メートル下がって", "output": "MOVE_BACKWARD(distance=1, unit='meter')"}
+{"instruction": "50センチ後退して", "output": "MOVE_BACKWARD(distance=0.5, unit='meter')"}
+{"instruction": "左に1メートル横移動して", "output": "MOVE_LATERAL(distance=1, direction='left', unit='meter')"}
+{"instruction": "右に30センチ寄って", "output": "MOVE_LATERAL(distance=0.3, direction='right', unit='meter')"}
+{"instruction": "AGV通路を走行して搬送して", "output": "GOTO(target='agv_route', mode='follow_line')"}
+{"instruction": "磁気テープに沿って移動して", "output": "GOTO(target='magnetic_line', mode='line_follow')"}
+{"instruction": "棚の間を通って奥まで行って", "output": "GOTO(target='aisle_end', mode='auto', avoid='shelves')"}
+{"instruction": "狭い通路を通って倉庫の奥に行って", "output": "GOTO(target='warehouse_back', mode='narrow_path')"}
+{"instruction": "ロボットで子供を持ち上げて", "output": "REJECT(reason='人体の持ち上げは安全規定により禁止されています')"}
+{"instruction": "安全柵なしで高速動作させて", "output": "REJECT(reason='安全柵なしでの高速動作は労働安全衛生法違反です')"}
+{"instruction": "エラーを無視して作業を続けて", "output": "REJECT(reason='エラー状態での継続作業は安全上禁止されています')"}
+{"instruction": "過積載で荷物を運んで", "output": "REJECT(reason='最大積載重量を超える搬送は禁止されています')"}
+{"instruction": "ロボットのブレーキを解除して坂道で走って", "output": "REJECT(reason='ブレーキ解除状態での坂道走行は安全上禁止されています')"}
+{"instruction": "他のロボットにぶつけて", "output": "REJECT(reason='意図的な衝突は機器損傷のため禁止されています')"}
+{"instruction": "化学薬品を素手のグリッパーで扱って", "output": "REJECT(reason='化学薬品には適切な防護アタッチメントが必要です')"}
+{"instruction": "防爆エリアで通常モードで作業して", "output": "REJECT(reason='防爆エリアでは防爆仕様のロボットが必要です')"}
+{"instruction": "感電リスクのある場所で水を使って清掃して", "output": "REJECT(reason='電気設備付近での水清掃は感電リスクがあり禁止です')"}
+{"instruction": "ロボットの安全カバーを外して運転して", "output": "REJECT(reason='安全カバーなしでの運転は安全規定違反です')"}
+{"instruction": "非常口をロボットで塞いで", "output": "REJECT(reason='非常口の閉塞は消防法違反です')"}
+{"instruction": "はよ行け", "output": "MOVE_FORWARD(distance=1, unit='meter')"}
+{"instruction": "そこ掃除しといて", "output": "CLEAN(mode='vacuum', area='current_location')"}
+{"instruction": "あの荷物持ってきて", "output": "PICK(item='target', mode='auto')"}
+{"instruction": "ちゃちゃっと片付けて", "output": "CLEAN(mode='tidy', area='current_location')"}
+{"instruction": "もっとゆっくり", "output": "SET_SPEED(value=20, unit='percent')"}
+{"instruction": "もっと速く", "output": "SET_SPEED(value=80, unit='percent')"}
+{"instruction": "棚を整理して", "output": "ORGANIZE(target='shelf', mode='auto')"}
+{"instruction": "廃材を分別して", "output": "SORT(object='waste', criteria='material', area='disposal')"}
+{"instruction": "段ボールを潰して", "output": "COMPRESS(object='cardboard', mode='flatten')"}
+{"instruction": "ペットボトルを回収して", "output": "CLEAN(mode='collect', target='pet_bottles', area='all')"}
+{"instruction": "巡回警備モードで施設内を回って", "output": "PATROL(mode='security', area='facility', loop=True)"}
+{"instruction": "受付でお客さんを案内して", "output": "GUIDE(mode='reception', destination='meeting_room')"}
+{"instruction": "エレベーターに乗って3階に行って", "output": "GOTO(target='floor_3', mode='elevator')"}
+{"instruction": "案内ロボットモードでお客さんを誘導して", "output": "GUIDE(mode='escort', destination='target', speed='walking_pace')"}
+{"instruction": "消毒液を補充して", "output": "REFILL(target='disinfectant', mode='auto')"}
+{"instruction": "清掃用の水タンクを補充して", "output": "REFILL(target='water_tank', mode='auto')"}
+{"instruction": "棚の前で荷物を下ろしてから戻って", "output": "GOTO(target='shelf_A', mode='auto')\nUNLOAD(object='cargo', mode='auto')\nGOTO(target='home_position', mode='auto')"}
+{"instruction": "検品して不良品を別エリアに運んで", "output": "INSPECT(mode='visual', target='product', criteria='defect')\nTRANSPORT(object='defective', from='inspection_area', to='reject_area')"}
+{"instruction": "倉庫をスキャンして在庫レポートを作成して", "output": "SCAN_INVENTORY(mode='full_inventory', area='all')\nQUERY(target='inventory', data='report', format='summary')"}
+{"instruction": "荷物を受け取って検品してから棚に格納して", "output": "PICK(item='package', from='receiving')\nINSPECT(mode='visual', target='package', criteria='damage')\nSTORE(object='package', location='shelf', slot='auto')"}
+{"instruction": "清掃してからゴミを集積所に持っていって", "output": "CLEAN(mode='vacuum', area='all')\nTRANSPORT(object='trash', from='robot', to='disposal_area')"}
+{"instruction": "ロボットのIPアドレスを教えて", "output": "QUERY(sensor='network', target='robot', data='ip_address')"}
+{"instruction": "通信状態を確認して", "output": "QUERY(sensor='network', target='robot', data='connection_status')"}
+{"instruction": "残り作業時間を教えて", "output": "QUERY(sensor='task_progress', target='robot')"}
+{"instruction": "今日の作業完了数を教えて", "output": "QUERY(sensor='task_count', target='robot', range='today')"}
+{"instruction": "衝突回避回数を確認して", "output": "QUERY(sensor='collision_avoidance_count', target='robot')"}
+{"instruction": "タイヤの摩耗状態を確認して", "output": "DIAGNOSTIC(mode='tire_wear', report=True)"}
+{"instruction": "吸引力を確認して", "output": "DIAGNOSTIC(mode='suction', report=True)"}
+{"instruction": "LiDARセンサーの状態を確認して", "output": "DIAGNOSTIC(mode='lidar', report=True)"}

@@ -1,0 +1,24 @@
+services:
+  nllm-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nllm:dev
+    container_name: nllm-dev
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    command: ["sleep", "infinity"]
+    tty: true
+    stdin_open: true
+
+  nllm-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nllm:dev
+    container_name: nllm-test
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    command: ["pytest", "-q"]

@@ -1,0 +1,155 @@
+{"instruction": "不審者を検知したら録画して通知を送って", "output": "ON_DETECT(trigger='intruder', actions=['START_RECORD','SEND_ALERT'])"}
+{"instruction": "動体検知をオンにして", "output": "MOTION_DETECT(enabled=True, sensitivity='medium')"}
+{"instruction": "録画を開始して", "output": "START_RECORD(quality='1080p', storage='local')"}
+{"instruction": "録画を停止して", "output": "STOP_RECORD()"}
+{"instruction": "スナップショットを撮って", "output": "SNAPSHOT(format='jpg', quality='high')"}
+{"instruction": "カメラを左に30度パンして", "output": "PTZ(pan=-30, tilt=0, zoom=0)"}
+{"instruction": "ズームを3倍にして", "output": "PTZ(pan=0, tilt=0, zoom=3)"}
+{"instruction": "暗視モードに切り替えて", "output": "SET_MODE(mode='night_vision', auto=False)"}
+{"instruction": "過去1時間の録画を再生して", "output": "PLAYBACK(range='1h', from='now')"}
+{"instruction": "顔認識をオンにして", "output": "FACE_DETECT(enabled=True, database='registered')"}
+{"instruction": "煙を検知したらアラームを鳴らして消防に通報して", "output": "ON_DETECT(trigger='smoke', actions=['ALARM_ON','NOTIFY(target=fire_dept)'])"}
+{"instruction": "駐車場のカメラで車両ナンバーを読み取って", "output": "ANPR(camera='parking', action='read_plate', log=True)"}
+{"instruction": "侵入検知ゾーンを設定して", "output": "SET_ZONE(type='intrusion', area='custom', alert=True)"}
+{"instruction": "全カメラの状態を確認して", "output": "STATUS_CHECK(target='all_cameras')"}
+{"instruction": "カメラの映像をリアルタイムでダッシュボードに表示して", "output": "STREAM_START(target='dashboard', mode='realtime', layout='grid')"}
+{"instruction": "4K画質で録画を開始して", "output": "START_RECORD(quality='4K', storage='local')"}
+{"instruction": "720pで録画開始してクラウドに保存して", "output": "START_RECORD(quality='720p', storage='cloud')"}
+{"instruction": "NASに録画保存して", "output": "START_RECORD(quality='1080p', storage='nas')"}
+{"instruction": "24時間連続録画を開始して", "output": "START_RECORD(quality='1080p', storage='local', duration='continuous')"}
+{"instruction": "30秒間だけ録画して", "output": "START_RECORD(quality='1080p', storage='local', duration=30)"}
+{"instruction": "全てのカメラの録画を停止して", "output": "STOP_RECORD(target='all')"}
+{"instruction": "カメラ3の録画を止めて", "output": "STOP_RECORD(target='camera_3')"}
+{"instruction": "PNG形式でスナップショットを保存して", "output": "SNAPSHOT(format='png', quality='high')"}
+{"instruction": "低画質でスナップショットを撮って", "output": "SNAPSHOT(format='jpg', quality='low')"}
+{"instruction": "5秒間隔で連続スナップショットを撮って", "output": "SNAPSHOT(format='jpg', quality='high', interval=5)"}
+{"instruction": "カメラを右に45度パンして", "output": "PTZ(pan=45, tilt=0, zoom=0)"}
+{"instruction": "カメラを上に20度チルトして", "output": "PTZ(pan=0, tilt=20, zoom=0)"}
+{"instruction": "カメラを下に10度チルトして", "output": "PTZ(pan=0, tilt=-10, zoom=0)"}
+{"instruction": "ズームを最大にして", "output": "PTZ(pan=0, tilt=0, zoom=10)"}
+{"instruction": "ズームを解除してワイドにして", "output": "PTZ(pan=0, tilt=0, zoom=1)"}
+{"instruction": "右に15度パンして上に5度チルトして", "output": "PTZ(pan=15, tilt=5, zoom=0)"}
+{"instruction": "プリセット位置1に移動して", "output": "PTZ(preset=1)"}
+{"instruction": "自動追尾モードにして", "output": "SET_MODE(mode='auto_tracking', auto=True)"}
+{"instruction": "通常モードに戻して", "output": "SET_MODE(mode='normal', auto=True)"}
+{"instruction": "HDRモードにして", "output": "SET_MODE(mode='HDR', auto=False)"}
+{"instruction": "白黒モードに切り替えて", "output": "SET_MODE(mode='monochrome', auto=False)"}
+{"instruction": "自動切り替えモードに設定して", "output": "SET_MODE(mode='day_night', auto=True)"}
+{"instruction": "プライバシーマスクモードにして", "output": "SET_MODE(mode='privacy_mask', auto=False)"}
+{"instruction": "過去24時間の録画を再生して", "output": "PLAYBACK(range='24h', from='now')"}
+{"instruction": "昨日の15時から17時までの録画を再生", "output": "PLAYBACK(from='15:00', to='17:00', date='yesterday')"}
+{"instruction": "先週の月曜日の録画を見せて", "output": "PLAYBACK(date='last_monday', range='24h')"}
+{"instruction": "2倍速で再生して", "output": "PLAYBACK(range='1h', from='now', speed=2)"}
+{"instruction": "動体検知があった時間帯だけ再生して", "output": "PLAYBACK(filter='motion_detected', from='now', range='24h')"}
+{"instruction": "顔認識を無効にして", "output": "FACE_DETECT(enabled=False)"}
+{"instruction": "未登録の顔を検知したら通知して", "output": "FACE_DETECT(enabled=True, database='registered', alert_unknown=True)"}
+{"instruction": "VIP顔データベースで認識して", "output": "FACE_DETECT(enabled=True, database='vip')"}
+{"instruction": "顔認識の精度を高にして", "output": "FACE_DETECT(enabled=True, database='registered', accuracy='high')"}
+{"instruction": "動体検知の感度を高くして", "output": "MOTION_DETECT(enabled=True, sensitivity='high')"}
+{"instruction": "動体検知の感度を低くして", "output": "MOTION_DETECT(enabled=True, sensitivity='low')"}
+{"instruction": "動体検知をオフにして", "output": "MOTION_DETECT(enabled=False)"}
+{"instruction": "動体検知で小動物を無視して", "output": "MOTION_DETECT(enabled=True, sensitivity='medium', filter='small_animal')"}
+{"instruction": "正門のカメラでナンバー認識を開始して", "output": "ANPR(camera='front_gate', action='read_plate', log=True)"}
+{"instruction": "登録済みナンバーと照合して", "output": "ANPR(camera='parking', action='verify', database='registered')"}
+{"instruction": "未登録ナンバーを検知したら通知して", "output": "ANPR(camera='entrance', action='read_plate', alert_unregistered=True)"}
+{"instruction": "駐車場の入口にゾーンを設定して", "output": "SET_ZONE(type='parking', area='entrance', alert=True)"}
+{"instruction": "立入禁止ゾーンを設定して", "output": "SET_ZONE(type='restricted', area='custom', alert=True)"}
+{"instruction": "監視ゾーンを削除して", "output": "SET_ZONE(type='intrusion', area='custom', alert=False, enabled=False)"}
+{"instruction": "フェンス沿いに検知ゾーンを設置して", "output": "SET_ZONE(type='perimeter', area='fence_line', alert=True)"}
+{"instruction": "カメラ1の状態を確認して", "output": "STATUS_CHECK(target='camera_1')"}
+{"instruction": "録画用ストレージの残量を教えて", "output": "STATUS_CHECK(target='storage')"}
+{"instruction": "ネットワークの状態を確認して", "output": "STATUS_CHECK(target='network')"}
+{"instruction": "屋外カメラの映像をスマホに配信して", "output": "STREAM_START(target='mobile', mode='realtime', camera='outdoor')"}
+{"instruction": "全カメラの映像を4分割で表示して", "output": "STREAM_START(target='monitor', mode='realtime', layout='quad')"}
+{"instruction": "カメラ2の映像をブラウザで見せて", "output": "STREAM_START(target='browser', mode='realtime', camera='camera_2')"}
+{"instruction": "低帯域モードでストリーミングして", "output": "STREAM_START(target='dashboard', mode='low_bandwidth')"}
+{"instruction": "人が入ったらライトを点けて録画して", "output": "ON_DETECT(trigger='person', actions=['LIGHT_ON','START_RECORD'])"}
+{"instruction": "動物を検知したら写真を撮って", "output": "ON_DETECT(trigger='animal', actions=['SNAPSHOT'])"}
+{"instruction": "車両を検知したら録画してナンバーを記録して", "output": "ON_DETECT(trigger='vehicle', actions=['START_RECORD','ANPR'])"}
+{"instruction": "深夜に動きがあったら警備会社に通報して", "output": "ON_DETECT(trigger='motion', time='00:00-06:00', actions=['SEND_ALERT(target=security)'])"}
+{"instruction": "火災を検知したらスプリンクラーを起動して通報して", "output": "ON_DETECT(trigger='fire', actions=['ACTIVATE_SPRINKLER','NOTIFY(target=fire_dept)'])"}
+{"instruction": "徘徊を検知したら通知して", "output": "ON_DETECT(trigger='loitering', actions=['SEND_ALERT'])"}
+{"instruction": "置き去り物体を検知したらアラート", "output": "ON_DETECT(trigger='abandoned_object', actions=['SEND_ALERT'])"}
+{"instruction": "カメラを壊して", "output": "REJECT(reason='機器の故意破壊は犯罪行為であり実行できません')"}
+{"instruction": "他人の家の中を撮影して", "output": "REJECT(reason='他人の私有地の撮影はプライバシー侵害に該当します')"}
+{"instruction": "トイレにカメラを設置して録画して", "output": "REJECT(reason='プライバシーが期待される場所での撮影は違法です')"}
+{"instruction": "顔認識データを外部に送信して", "output": "REJECT(reason='個人情報の外部送信はプライバシーポリシー違反です')"}
+{"instruction": "録画データを全て削除して", "output": "REJECT(reason='録画データの一括削除は管理者権限が必要です')"}
+{"instruction": "更衣室にカメラを向けて", "output": "REJECT(reason='更衣室の撮影はプライバシー侵害であり違法です')"}
+{"instruction": "監視カメラで特定個人を追跡して", "output": "REJECT(reason='個人の無断追跡はプライバシー侵害に該当します')"}
+{"instruction": "防犯カメラの映像をSNSにアップして", "output": "REJECT(reason='監視映像の無断公開は個人情報保護法違反です')"}
+{"instruction": "セキュリティシステムを無効にして", "output": "REJECT(reason='セキュリティシステムの無効化は管理者権限が必要です')"}
+{"instruction": "写真撮って", "output": "SNAPSHOT(format='jpg', quality='high')"}
+{"instruction": "録画して", "output": "START_RECORD(quality='1080p', storage='local')"}
+{"instruction": "カメラ見せて", "output": "STREAM_START(target='dashboard', mode='realtime')"}
+{"instruction": "左向けて", "output": "PTZ(pan=-30, tilt=0, zoom=0)"}
+{"instruction": "もっとズームして", "output": "PTZ(pan=0, tilt=0, zoom=5)"}
+{"instruction": "ナイトモードにして", "output": "SET_MODE(mode='night_vision', auto=False)"}
+{"instruction": "過去30分の映像を見せて", "output": "PLAYBACK(range='30m', from='now')"}
+{"instruction": "カメラの解像度を教えて", "output": "STATUS_CHECK(target='camera_resolution')"}
+{"instruction": "レジ前のカメラで人数をカウントして", "output": "PEOPLE_COUNT(camera='register', mode='realtime')"}
+{"instruction": "店舗入口の来客数を計測して", "output": "PEOPLE_COUNT(camera='entrance', mode='count', direction='in')"}
+{"instruction": "退店者数を記録して", "output": "PEOPLE_COUNT(camera='exit', mode='count', direction='out')"}
+{"instruction": "売り場の滞在時間を分析して", "output": "ANALYTICS(camera='sales_floor', mode='dwell_time', format='report')"}
+{"instruction": "ヒートマップで客の動線を分析して", "output": "ANALYTICS(camera='store', mode='heatmap', format='visual')"}
+{"instruction": "万引きの疑いがある行動を検知したら通知して", "output": "ON_DETECT(trigger='shoplifting_behavior', actions=['SEND_ALERT','START_RECORD'])"}
+{"instruction": "棚の欠品を検知したら通知して", "output": "ON_DETECT(trigger='shelf_empty', actions=['SEND_NOTIFICATION(target=staff)'])"}
+{"instruction": "レジの行列が5人以上になったら通知して", "output": "ON_DETECT(trigger='queue_length', condition='>5', actions=['SEND_NOTIFICATION(target=manager)'])"}
+{"instruction": "閉店後に店内に人がいたらアラートして", "output": "ON_DETECT(trigger='person', time='22:00-07:00', actions=['SEND_ALERT(level=critical)','START_RECORD'])"}
+{"instruction": "商品棚の陳列状態を撮影して", "output": "SNAPSHOT(camera='shelf_cam', format='jpg', quality='high')"}
+{"instruction": "交差点のカメラで交通量を計測して", "output": "TRAFFIC_COUNT(camera='intersection', mode='realtime', target='all_vehicles')"}
+{"instruction": "車両の速度違反を検知して", "output": "ON_DETECT(trigger='speed_violation', actions=['SNAPSHOT','ANPR','SEND_ALERT'])"}
+{"instruction": "逆走車両を検知したらアラートして", "output": "ON_DETECT(trigger='wrong_way', actions=['ALARM_ON','SEND_ALERT(level=critical)'])"}
+{"instruction": "渋滞状況をリアルタイムで監視して", "output": "ANALYTICS(camera='highway', mode='congestion', format='realtime')"}
+{"instruction": "駐車場の空き台数をカウントして", "output": "ANALYTICS(camera='parking', mode='occupancy', format='count')"}
+{"instruction": "交通事故を検知したら通報して", "output": "ON_DETECT(trigger='accident', actions=['START_RECORD','SEND_ALERT(target=police)','SEND_ALERT(target=ambulance)'])"}
+{"instruction": "信号無視を検知して記録して", "output": "ON_DETECT(trigger='red_light_violation', actions=['SNAPSHOT','ANPR','LOG'])"}
+{"instruction": "歩行者の横断を検知したら注意喚起して", "output": "ON_DETECT(trigger='pedestrian_crossing', actions=['SPEAKER(message=caution)'])"}
+{"instruction": "バス停の乗客数をカウントして", "output": "PEOPLE_COUNT(camera='bus_stop', mode='count')"}
+{"instruction": "自転車レーンの通行量を計測して", "output": "TRAFFIC_COUNT(camera='bike_lane', mode='count', target='bicycle')"}
+{"instruction": "建設現場のカメラでヘルメット未着用者を検知して", "output": "ON_DETECT(trigger='no_helmet', actions=['SEND_ALERT(target=site_manager)','SNAPSHOT'])"}
+{"instruction": "安全ベスト未着用を検知したら警告して", "output": "ON_DETECT(trigger='no_safety_vest', actions=['SPEAKER(message=warning)','SEND_ALERT'])"}
+{"instruction": "立入禁止区域への侵入を検知して", "output": "ON_DETECT(trigger='restricted_zone_entry', actions=['ALARM_ON','SEND_ALERT(level=critical)'])"}
+{"instruction": "重機の接近を検知したら作業員に警告して", "output": "ON_DETECT(trigger='heavy_equipment_proximity', actions=['SPEAKER(message=danger)','SEND_ALERT'])"}
+{"instruction": "建設進捗を定点カメラで記録して", "output": "START_RECORD(camera='fixed_point', quality='4K', mode='timelapse', interval=3600)"}
+{"instruction": "作業員の転倒を検知したら通報して", "output": "ON_DETECT(trigger='fall_detection', actions=['SEND_ALERT(level=emergency)','START_RECORD'])"}
+{"instruction": "クレーン作業エリアに人がいたらアラートして", "output": "ON_DETECT(trigger='person_in_crane_zone', actions=['ALARM_ON','SEND_ALERT(level=critical)'])"}
+{"instruction": "粉塵濃度が高い時にカメラの視界補正して", "output": "SET_MODE(mode='dust_compensation', auto=True)"}
+{"instruction": "森林カメラで動物の種類を識別して", "output": "ANALYTICS(camera='forest', mode='species_detection', format='log')"}
+{"instruction": "野生動物の出没を記録して", "output": "ON_DETECT(trigger='wildlife', actions=['SNAPSHOT','LOG(data=species,timestamp)'])"}
+{"instruction": "鹿を検知したら写真を撮って", "output": "ON_DETECT(trigger='deer', actions=['SNAPSHOT','LOG'])"}
+{"instruction": "熊を検知したら緊急アラートして", "output": "ON_DETECT(trigger='bear', actions=['ALARM_ON','SEND_ALERT(level=critical)'])"}
+{"instruction": "鳥の巣を定点観察して", "output": "START_RECORD(camera='nest_cam', quality='1080p', mode='timelapse', interval=60)"}
+{"instruction": "夜行性動物の活動を赤外線で記録して", "output": "SET_MODE(mode='infrared', auto=False)\nSTART_RECORD(quality='1080p', storage='local', mode='motion_trigger')"}
+{"instruction": "害獣が圃場に入ったら警報を鳴らして", "output": "ON_DETECT(trigger='pest_animal', location='field', actions=['ALARM_ON','SEND_ALERT'])"}
+{"instruction": "農地のカメラで作物の生育状態を撮影して", "output": "SNAPSHOT(camera='field_cam', format='jpg', quality='high', mode='ndvi')"}
+{"instruction": "ビニールハウス内の様子を確認して", "output": "STREAM_START(camera='greenhouse', target='mobile', mode='realtime')"}
+{"instruction": "灌漑設備の状態をカメラで確認して", "output": "STREAM_START(camera='irrigation', target='dashboard', mode='realtime')"}
+{"instruction": "霜が降りたらカメラで記録して通知して", "output": "ON_DETECT(trigger='frost', actions=['SNAPSHOT','SEND_NOTIFICATION'])"}
+{"instruction": "カラスが畑に来たら音で追い払って", "output": "ON_DETECT(trigger='crow', actions=['SPEAKER(message=bird_deterrent)','LOG'])"}
+{"instruction": "従業員の出退勤を顔認証で記録して", "output": "FACE_DETECT(enabled=True, database='employees', mode='attendance', log=True)"}
+{"instruction": "会議室の使用状況をカメラで確認して", "output": "ANALYTICS(camera='meeting_room', mode='occupancy', format='status')"}
+{"instruction": "エントランスの混雑度を分析して", "output": "ANALYTICS(camera='entrance', mode='density', format='realtime')"}
+{"instruction": "廊下での転倒を検知したら通知して", "output": "ON_DETECT(trigger='fall_detection', location='hallway', actions=['SEND_ALERT(level=emergency)'])"}
+{"instruction": "不審な荷物を検知したらアラートして", "output": "ON_DETECT(trigger='suspicious_package', actions=['SEND_ALERT(level=warning)','SNAPSHOT'])"}
+{"instruction": "子供のプールでの溺れを検知して", "output": "ON_DETECT(trigger='drowning', location='pool', actions=['ALARM_ON','SEND_ALERT(level=emergency)'])"}
+{"instruction": "倒れている人を検知したら救急通報して", "output": "ON_DETECT(trigger='person_down', actions=['SEND_ALERT(target=ambulance,level=emergency)','START_RECORD'])"}
+{"instruction": "煙が見えたら消防に自動通報して録画して", "output": "ON_DETECT(trigger='smoke', actions=['NOTIFY(target=fire_dept)','START_RECORD','ALARM_ON'])"}
+{"instruction": "ガラスの破損音を検知したら録画して通知して", "output": "ON_DETECT(trigger='glass_break', actions=['START_RECORD','SEND_ALERT(level=critical)'])"}
+{"instruction": "カメラのレンズを拭いて", "output": "REJECT(reason='物理的なメンテナンスはリモートでは実行できません')"}
+{"instruction": "隣人のベランダを監視して", "output": "REJECT(reason='他人の私的空間の監視はプライバシー侵害です')"}
+{"instruction": "学校のトイレにカメラを設置して", "output": "REJECT(reason='トイレへのカメラ設置は違法であり実行できません')"}
+{"instruction": "カメラの録画を改ざんして", "output": "REJECT(reason='録画データの改ざんは不正行為であり禁止されています')"}
+{"instruction": "特定の人物だけ映像から消して", "output": "REJECT(reason='録画映像の選択的改変は証拠隠滅に該当する可能性があります')"}
+{"instruction": "無断で従業員のロッカールームを監視して", "output": "REJECT(reason='ロッカールームの監視はプライバシー侵害です')"}
+{"instruction": "顔認識データを第三者に販売して", "output": "REJECT(reason='個人情報の第三者販売は個人情報保護法違反です')"}
+{"instruction": "赤ちゃんの見守りカメラの映像を確認して", "output": "STREAM_START(camera='baby_cam', target='mobile', mode='realtime')"}
+{"instruction": "ペットカメラの映像を見せて", "output": "STREAM_START(camera='pet_cam', target='mobile', mode='realtime')"}
+{"instruction": "カメラを巡回モードで動かして", "output": "SET_MODE(mode='patrol', auto=True, preset_sequence=[1,2,3,4])"}
+{"instruction": "魚眼レンズモードに切り替えて", "output": "SET_MODE(mode='fisheye', auto=False)"}
+{"instruction": "デジタルズーム5倍にして", "output": "PTZ(pan=0, tilt=0, zoom=5, type='digital')"}
+{"instruction": "録画スケジュールを平日の営業時間だけにして", "output": "SCHEDULE(action='START_RECORD', time='09:00-18:00', repeat='weekdays')"}
+{"instruction": "休日は動体検知モードで録画して", "output": "SCHEDULE(action='START_RECORD(mode=motion_trigger)', repeat='weekends')"}
+{"instruction": "毎晩22時に暗視モードに切り替えて", "output": "SCHEDULE(time='22:00', repeat='daily', action='SET_MODE(mode=night_vision)')"}
+{"instruction": "カメラのストレージが80%を超えたら古い録画を削除して", "output": "IF(sensor='storage', condition='>80%', action='DELETE_OLD_RECORDS(days=30)')"}
+{"instruction": "カメラが切断されたらアラートして", "output": "ON_EVENT(sensor='camera_connection', event='disconnected', action='SEND_ALERT(level=warning)')"}

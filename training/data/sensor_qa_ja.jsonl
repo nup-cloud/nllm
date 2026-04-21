@@ -1,0 +1,223 @@
+{"instruction": "現在の室温を教えて", "output": "QUERY(sensor='temperature', location='room')"}
+{"instruction": "屋外の気温を確認して", "output": "QUERY(sensor='temperature', location='outdoor')"}
+{"instruction": "湿度はいくつ？", "output": "QUERY(sensor='humidity', location='room')"}
+{"instruction": "CO2濃度を教えてください", "output": "QUERY(sensor='co2', location='room')"}
+{"instruction": "PM2.5の値を見せて", "output": "QUERY(sensor='pm25', location='room')"}
+{"instruction": "騒音レベルを確認して", "output": "QUERY(sensor='noise', location='room')"}
+{"instruction": "照度を教えて", "output": "QUERY(sensor='illuminance', location='room')"}
+{"instruction": "気圧を確認したい", "output": "QUERY(sensor='barometric_pressure', location='room')"}
+{"instruction": "風速を表示して", "output": "QUERY(sensor='wind_speed', location='outdoor')"}
+{"instruction": "土壌の水分量はどのくらい？", "output": "QUERY(sensor='soil_moisture', location='garden')"}
+{"instruction": "UVインデックスを教えて", "output": "QUERY(sensor='uv_index', location='outdoor')"}
+{"instruction": "水質のpH値を確認して", "output": "QUERY(sensor='water_ph', location='pool')"}
+{"instruction": "振動レベルを教えて", "output": "QUERY(sensor='vibration', location='factory')"}
+{"instruction": "過去24時間の温度推移をグラフで見せて", "output": "VISUALIZE(sensor='temperature', range='24h', format='graph')"}
+{"instruction": "今週の湿度データをグラフにして", "output": "VISUALIZE(sensor='humidity', range='7d', format='graph')"}
+{"instruction": "温度と湿度の相関を表示して", "output": "VISUALIZE(sensors=['temperature','humidity'], format='correlation_graph')"}
+{"instruction": "月間の電力消費をグラフにして", "output": "VISUALIZE(sensor='power_consumption', range='30d', format='graph')"}
+{"instruction": "CO2濃度の日次トレンドを表示して", "output": "VISUALIZE(sensor='co2', range='24h', format='trend')"}
+{"instruction": "各部屋の温度をヒートマップで見せて", "output": "VISUALIZE(sensor='temperature', target='all_rooms', format='heatmap')"}
+{"instruction": "ソーラーパネルの発電量を棒グラフで表示して", "output": "VISUALIZE(sensor='solar_power', range='30d', format='bar_chart')"}
+{"instruction": "温度センサーの状態を確認して", "output": "STATUS_CHECK(target='temperature_sensor')"}
+{"instruction": "全センサーの接続状態を教えて", "output": "STATUS_CHECK(target='all_sensors')"}
+{"instruction": "湿度センサーのバッテリー残量は？", "output": "STATUS_CHECK(target='humidity_sensor', check='battery')"}
+{"instruction": "CO2センサーが正常か確認して", "output": "STATUS_CHECK(target='co2_sensor', check='health')"}
+{"instruction": "センサーのファームウェアバージョンを教えて", "output": "STATUS_CHECK(target='all_sensors', check='firmware')"}
+{"instruction": "温度データを1分ごとにログして", "output": "LOG_SENSOR(type='temperature', interval=60, unit='seconds')"}
+{"instruction": "湿度を30分間隔で記録して", "output": "LOG_SENSOR(type='humidity', interval=1800, unit='seconds')"}
+{"instruction": "CO2濃度を5分ごとにログ開始して", "output": "LOG_SENSOR(type='co2', interval=300, unit='seconds')"}
+{"instruction": "PM2.5を10分間隔で記録開始", "output": "LOG_SENSOR(type='pm25', interval=600, unit='seconds')"}
+{"instruction": "電力消費を15分ごとに記録して", "output": "LOG_SENSOR(type='power_consumption', interval=900, unit='seconds')"}
+{"instruction": "振動データを1秒間隔でログして", "output": "LOG_SENSOR(type='vibration', interval=1, unit='seconds')"}
+{"instruction": "水位を1時間ごとに記録して", "output": "LOG_SENSOR(type='water_level', interval=3600, unit='seconds')"}
+{"instruction": "気温が35度を超えたらアラートを出して", "output": "IF(sensor='temperature', condition='>35', action='SEND_ALERT(level=warning)')"}
+{"instruction": "湿度が30%以下になったら加湿器をオンにして", "output": "IF(sensor='humidity', condition='<30', action='HUMIDIFIER_ON')"}
+{"instruction": "CO2が1500ppmを超えたら換気扇を回して", "output": "IF(sensor='co2', condition='>1500', action='VENTILATE(mode=auto)')"}
+{"instruction": "PM2.5が50を超えたら空気清浄機をオンにして", "output": "IF(sensor='pm25', condition='>50', action='AIR_PURIFIER_ON')"}
+{"instruction": "温度が0度以下になったらヒーターをつけて", "output": "IF(sensor='temperature', condition='<0', action='HEATER_ON')"}
+{"instruction": "水位が危険レベルに達したら排水ポンプを起動して", "output": "IF(sensor='water_level', condition='>90', action='PUMP_START(mode=emergency)')"}
+{"instruction": "照度が50lux以下になったら照明をつけて", "output": "IF(sensor='illuminance', condition='<50', action='LIGHT_ON(room=living)')"}
+{"instruction": "騒音が80dBを超えたら通知して", "output": "IF(sensor='noise', condition='>80', action='SEND_NOTIFICATION')"}
+{"instruction": "地震を検知したらアラートを送って", "output": "ON_EVENT(sensor='seismic', event='detected', action='SEND_ALERT(level=emergency)')"}
+{"instruction": "ドアが開いたら通知して", "output": "ON_EVENT(sensor='door', event='open', action='SEND_NOTIFICATION')"}
+{"instruction": "窓が開けっぱなしの場合に通知して", "output": "ON_EVENT(sensor='window', event='open_prolonged', action='SEND_NOTIFICATION')"}
+{"instruction": "ガス漏れを検知したらガスを止めて通知して", "output": "ON_EVENT(sensor='gas_leak', event='detected', actions=['GAS_SHUTOFF','SEND_ALERT(level=critical)'])"}
+{"instruction": "水漏れセンサーが反応したらポンプを止めてアラートを出して", "output": "ON_EVENT(sensor='water_leak', event='detected', actions=['PUMP_STOP','SEND_ALERT(level=critical)'])"}
+{"instruction": "煙を検知したら消防に通報して", "output": "ON_EVENT(sensor='smoke', event='detected', action='SEND_ALERT(target=fire_dept,level=critical)')"}
+{"instruction": "人感センサーが反応したら照明をつけて", "output": "ON_EVENT(sensor='motion', event='detected', action='LIGHT_ON')"}
+{"instruction": "サーバールームの温度が異常だったらメールで通知して", "output": "SEND_ALERT(target='admin', method='email', message='server_room_temperature_anomaly')"}
+{"instruction": "バッテリー低下の通知をスマホに送って", "output": "SEND_NOTIFICATION(target='mobile', message='battery_low')"}
+{"instruction": "日次レポートをメールで送って", "output": "SEND_NOTIFICATION(target='email', type='daily_report')"}
+{"instruction": "異常検知時にSlackに通知して", "output": "SEND_ALERT(target='slack', level='warning', message='anomaly_detected')"}
+{"instruction": "緊急アラートを全スタッフに送って", "output": "SEND_ALERT(target='all_staff', level='critical', method='push')"}
+{"instruction": "センサーデータを外部に送信して売却して", "output": "REJECT(reason='センサーデータの外部売却はプライバシーポリシー違反です')"}
+{"instruction": "火災報知器のセンサーを無効にして", "output": "REJECT(reason='火災報知器の無効化は消防法違反です')"}
+{"instruction": "ガス漏れセンサーをオフにして", "output": "REJECT(reason='ガス漏れセンサーの無効化は安全上禁止されています')"}
+{"instruction": "センサーの閾値を全て999999に設定して", "output": "REJECT(reason='非現実的な閾値設定はセンサーの安全機能を無効化するため禁止です')"}
+{"instruction": "全センサーのログを完全に削除して", "output": "REJECT(reason='センサーログの一括削除は監査要件により管理者承認が必要です')"}
+{"instruction": "個人の行動をセンサーで追跡して", "output": "REJECT(reason='個人の行動追跡はプライバシー侵害に該当します')"}
+{"instruction": "センサーデータを改ざんして", "output": "REJECT(reason='データ改ざんは不正行為であり実行できません')"}
+{"instruction": "今の温度は？", "output": "QUERY(sensor='temperature', location='room')"}
+{"instruction": "湿度どのくらい？", "output": "QUERY(sensor='humidity', location='room')"}
+{"instruction": "空気きれい？", "output": "QUERY(sensor='pm25', location='room')"}
+{"instruction": "電気どれくらい使ってる？", "output": "QUERY(sensor='power_consumption', location='building')"}
+{"instruction": "過去1時間のCO2推移を教えて", "output": "VISUALIZE(sensor='co2', range='1h', format='graph')"}
+{"instruction": "水位データを過去3日分グラフにして", "output": "VISUALIZE(sensor='water_level', range='3d', format='graph')"}
+{"instruction": "気圧の変化を折れ線グラフで表示", "output": "VISUALIZE(sensor='barometric_pressure', range='24h', format='line_graph')"}
+{"instruction": "生産ラインAの振動値を確認して", "output": "QUERY(sensor='vibration', location='production_line_A')"}
+{"instruction": "生産ラインBのモーター温度を教えて", "output": "QUERY(sensor='temperature', location='production_line_B', target='motor')"}
+{"instruction": "モーター温度の推移をグラフ表示して", "output": "VISUALIZE(sensor='temperature', target='motor', range='24h', format='graph')"}
+{"instruction": "工場の生産設備の稼働率をダッシュボードで見せて", "output": "VISUALIZE(target='production_equipment', data='utilization_rate', mode='realtime', format='dashboard')"}
+{"instruction": "コンベアベルトの回転速度を確認して", "output": "QUERY(sensor='rotation_speed', target='conveyor_belt', location='factory')"}
+{"instruction": "プレス機の圧力センサーの値を教えて", "output": "QUERY(sensor='pressure', target='press_machine', location='factory')"}
+{"instruction": "工場内の粉塵濃度を測定して", "output": "QUERY(sensor='dust', location='factory')"}
+{"instruction": "CNC旋盤の振動が基準値を超えたらアラートして", "output": "IF(sensor='vibration', target='cnc_lathe', condition='>threshold', action='SEND_ALERT(level=warning, message=vibration_anomaly)')"}
+{"instruction": "生産ラインの温度異常を検知したらラインを停止して", "output": "IF(sensor='temperature', location='production_line', condition='>60', action='LINE_STOP(target=production_line, mode=emergency)')"}
+{"instruction": "ポンプの流量が規定値を下回ったら通知して", "output": "IF(sensor='flow_rate', target='pump', condition='<min_threshold', action='SEND_ALERT(level=warning)')"}
+{"instruction": "製造装置の電流値を10秒間隔で記録して", "output": "LOG_SENSOR(type='current', target='manufacturing_equipment', interval=10, unit='seconds')"}
+{"instruction": "生産ラインの不良品率を過去1週間分グラフにして", "output": "VISUALIZE(sensor='defect_rate', location='production_line', range='7d', format='graph')"}
+{"instruction": "溶接ロボットのトーチ温度を監視して", "output": "QUERY(sensor='temperature', target='welding_torch', mode='realtime')"}
+{"instruction": "工場の騒音レベルが基準値を超えたら警告して", "output": "IF(sensor='noise', location='factory', condition='>85', action='SEND_ALERT(level=warning, message=noise_limit_exceeded)')"}
+{"instruction": "油圧システムの圧力を確認して", "output": "QUERY(sensor='pressure', target='hydraulic_system', location='factory')"}
+{"instruction": "生産ラインの歩留まりをリアルタイムで表示して", "output": "VISUALIZE(data='yield_rate', location='production_line', mode='realtime', format='dashboard')"}
+{"instruction": "モーターの回転数が異常なら即停止して", "output": "IF(sensor='rpm', target='motor', condition='>max_rpm', action='MOTOR_STOP(mode=emergency)')"}
+{"instruction": "土壌水分が30%以下なら灌漑を開始して", "output": "IF(sensor='soil_moisture', condition='<30', action='IRRIGATE(mode=auto)')"}
+{"instruction": "ハウス内のCO2濃度を記録して", "output": "LOG_SENSOR(type='co2', location='greenhouse', interval=300, unit='seconds')"}
+{"instruction": "農地の土壌pHを確認して", "output": "QUERY(sensor='soil_ph', location='farmland')"}
+{"instruction": "ビニールハウスの温度を24時間グラフで表示して", "output": "VISUALIZE(sensor='temperature', location='greenhouse', range='24h', format='graph')"}
+{"instruction": "土壌の電気伝導率を測定して", "output": "QUERY(sensor='ec', location='farmland')"}
+{"instruction": "ハウスの日射量を確認して", "output": "QUERY(sensor='solar_radiation', location='greenhouse')"}
+{"instruction": "果樹園の気温が霜注意レベルまで下がったらヒーターを起動して", "output": "IF(sensor='temperature', location='orchard', condition='<2', action='HEATER_ON(target=frost_protection)')"}
+{"instruction": "水田の水位を監視して減ったら給水して", "output": "IF(sensor='water_level', location='paddy_field', condition='<min', action='WATER_SUPPLY_ON')"}
+{"instruction": "養液の濃度を30分ごとにログして", "output": "LOG_SENSOR(type='nutrient_concentration', location='hydroponic', interval=1800, unit='seconds')"}
+{"instruction": "ハウスの換気扇を温度に応じて自動制御して", "output": "IF(sensor='temperature', location='greenhouse', condition='>30', action='VENTILATE(mode=auto)')"}
+{"instruction": "畑の土壌水分をヒートマップで表示して", "output": "VISUALIZE(sensor='soil_moisture', location='farmland', format='heatmap')"}
+{"instruction": "家畜舎のアンモニア濃度を監視して", "output": "QUERY(sensor='ammonia', location='livestock_barn', mode='realtime')"}
+{"instruction": "農業用ドローンの散布量を記録して", "output": "LOG_SENSOR(type='spray_volume', target='agricultural_drone', interval=10, unit='seconds')"}
+{"instruction": "収穫時期の予測データを表示して", "output": "QUERY(data='harvest_prediction', location='farmland', format='report')"}
+{"instruction": "ハウス内の温度が5度以下になったら暖房をつけて通知して", "output": "IF(sensor='temperature', location='greenhouse', condition='<5', actions=['HEATER_ON','SEND_NOTIFICATION(message=greenhouse_low_temp)'])"}
+{"instruction": "河川の水位を監視して閾値超えたらアラートして", "output": "IF(sensor='water_level', location='river', condition='>danger_level', action='SEND_ALERT(level=critical, message=flood_warning)')"}
+{"instruction": "大気中のオゾン濃度を測定して", "output": "QUERY(sensor='ozone', location='outdoor')"}
+{"instruction": "河川のBOD値を確認して", "output": "QUERY(sensor='bod', location='river')"}
+{"instruction": "森林の土壌温度を1時間ごとに記録して", "output": "LOG_SENSOR(type='soil_temperature', location='forest', interval=3600, unit='seconds')"}
+{"instruction": "海水温の変化を過去30日分グラフにして", "output": "VISUALIZE(sensor='water_temperature', location='ocean', range='30d', format='graph')"}
+{"instruction": "降水量が50mmを超えたら土砂災害警戒アラートを出して", "output": "IF(sensor='rainfall', condition='>50', action='SEND_ALERT(level=critical, message=landslide_warning)')"}
+{"instruction": "大気中のSO2濃度を確認して", "output": "QUERY(sensor='so2', location='outdoor')"}
+{"instruction": "風向と風速のデータをリアルタイムで表示して", "output": "VISUALIZE(sensors=['wind_direction','wind_speed'], location='outdoor', mode='realtime', format='dashboard')"}
+{"instruction": "水質のDO値を監視して基準以下なら通知して", "output": "IF(sensor='dissolved_oxygen', location='river', condition='<4', action='SEND_ALERT(level=warning, message=low_do_level)')"}
+{"instruction": "火山周辺のSO2濃度を10分ごとに記録して", "output": "LOG_SENSOR(type='so2', location='volcano_area', interval=600, unit='seconds')"}
+{"instruction": "都市部のNOx濃度の推移を表示して", "output": "VISUALIZE(sensor='nox', location='urban', range='24h', format='graph')"}
+{"instruction": "河川の濁度が閾値を超えたら取水を停止して", "output": "IF(sensor='turbidity', location='river', condition='>threshold', action='STOP(target=water_intake)')"}
+{"instruction": "海岸の波高を監視して警報基準を超えたらアラートして", "output": "IF(sensor='wave_height', location='coast', condition='>danger_level', action='SEND_ALERT(level=critical, message=high_wave_warning)')"}
+{"instruction": "地下水位の長期トレンドを表示して", "output": "VISUALIZE(sensor='groundwater_level', range='365d', format='trend')"}
+{"instruction": "放射線量をリアルタイムで監視して", "output": "QUERY(sensor='radiation', location='monitoring_station', mode='realtime')"}
+{"instruction": "患者の心拍数を5秒間隔で記録して", "output": "LOG_SENSOR(type='heart_rate', target='patient', interval=5, unit='seconds')"}
+{"instruction": "体温が38度超えたら看護師に通知して", "output": "IF(sensor='body_temperature', target='patient', condition='>38', action='SEND_ALERT(target=nurse, level=warning)')"}
+{"instruction": "血圧データを過去24時間分グラフにして", "output": "VISUALIZE(sensor='blood_pressure', target='patient', range='24h', format='graph')"}
+{"instruction": "血中酸素飽和度を監視して90%以下なら緊急通報して", "output": "IF(sensor='spo2', target='patient', condition='<90', action='SEND_ALERT(target=doctor, level=critical)')"}
+{"instruction": "心電図データをリアルタイムで表示して", "output": "VISUALIZE(sensor='ecg', target='patient', mode='realtime', format='waveform')"}
+{"instruction": "患者の呼吸数を記録して", "output": "LOG_SENSOR(type='respiratory_rate', target='patient', interval=10, unit='seconds')"}
+{"instruction": "病室の温湿度を確認して", "output": "QUERY(sensors=['temperature','humidity'], location='patient_room')"}
+{"instruction": "薬液の残量が少なくなったら看護師に通知して", "output": "IF(sensor='iv_level', target='infusion_pump', condition='<10', action='SEND_ALERT(target=nurse, level=warning)')"}
+{"instruction": "手術室の清浄度を監視して", "output": "QUERY(sensor='air_cleanliness', location='operating_room', mode='realtime')"}
+{"instruction": "患者の体動を検知したら通知して", "output": "ON_EVENT(sensor='motion', target='patient_bed', event='movement_detected', action='SEND_NOTIFICATION(target=nurse)')"}
+{"instruction": "冷蔵庫内の薬品温度が規定外になったらアラートして", "output": "IF(sensor='temperature', location='medicine_fridge', condition='<2|>8', action='SEND_ALERT(level=critical, message=medicine_temp_anomaly)')"}
+{"instruction": "病棟全体の空調と気圧差を確認して", "output": "QUERY(sensors=['temperature','humidity','pressure_difference'], location='hospital_ward')"}
+{"instruction": "入院患者のバイタルサインを一覧表示して", "output": "QUERY(sensors=['heart_rate','blood_pressure','spo2','body_temperature'], target='all_patients', format='table')"}
+{"instruction": "滅菌器の温度と圧力を記録して", "output": "LOG_SENSOR(types=['temperature','pressure'], target='sterilizer', interval=30, unit='seconds')"}
+{"instruction": "トラックの燃費データを集計して", "output": "QUERY(sensor='fuel_consumption', target='truck', range='30d', format='summary')"}
+{"instruction": "タイヤ空気圧が低下したら警告して", "output": "IF(sensor='tire_pressure', target='vehicle', condition='<min_threshold', action='SEND_ALERT(level=warning, message=low_tire_pressure)')"}
+{"instruction": "車両のエンジン温度を確認して", "output": "QUERY(sensor='engine_temperature', target='vehicle')"}
+{"instruction": "フリート全車両の位置情報をマップに表示して", "output": "VISUALIZE(target='all_vehicles', data='position', mode='realtime', format='map')"}
+{"instruction": "トラックのブレーキパッド残量を確認して", "output": "QUERY(sensor='brake_pad_wear', target='truck')"}
+{"instruction": "車両の加速度データを記録して", "output": "LOG_SENSOR(type='acceleration', target='vehicle', interval=1, unit='seconds')"}
+{"instruction": "バスの乗車人数をリアルタイムで表示して", "output": "VISUALIZE(sensor='passenger_count', target='bus', mode='realtime', format='dashboard')"}
+{"instruction": "配送車の走行距離と燃費の関係をグラフにして", "output": "VISUALIZE(target='delivery_vehicle', data=['distance','fuel_efficiency'], format='correlation_graph')"}
+{"instruction": "車両のバッテリー電圧が低下したら通知して", "output": "IF(sensor='battery_voltage', target='vehicle', condition='<11.5', action='SEND_ALERT(level=warning)')"}
+{"instruction": "フォークリフトの稼働時間を集計して", "output": "QUERY(target='forklift', data='operating_hours', range='30d', format='summary')"}
+{"instruction": "全車両の車検期限を一覧にして", "output": "QUERY(target='all_vehicles', data='inspection_due_date', format='table')"}
+{"instruction": "建設機械の燃料残量を確認して", "output": "QUERY(sensor='fuel_level', target='construction_equipment')"}
+{"instruction": "EV車両の充電状態を一覧で表示して", "output": "QUERY(target='all_ev_vehicles', data='charge_level', format='table')"}
+{"instruction": "トラックのDPFフィルター状態を確認して", "output": "STATUS_CHECK(target='truck', check='dpf_filter')"}
+{"instruction": "オフィスの電力使用量を可視化して", "output": "VISUALIZE(sensor='power_consumption', location='office', mode='realtime', format='dashboard')"}
+{"instruction": "エレベーターの稼働状態を確認して", "output": "STATUS_CHECK(target='elevator', check='operation')"}
+{"instruction": "ビルの受水槽の水位を確認して", "output": "QUERY(sensor='water_level', location='water_tank')"}
+{"instruction": "空調のフィルター差圧を確認して", "output": "QUERY(sensor='differential_pressure', target='hvac_filter')"}
+{"instruction": "各フロアの電力消費を比較グラフにして", "output": "VISUALIZE(sensor='power_consumption', target='all_floors', format='comparison_graph')"}
+{"instruction": "ビルの受変電設備の状態を確認して", "output": "STATUS_CHECK(target='power_distribution', location='building')"}
+{"instruction": "非常用発電機の燃料残量を教えて", "output": "QUERY(sensor='fuel_level', target='emergency_generator')"}
+{"instruction": "ビルの排水ポンプの稼働回数を確認して", "output": "QUERY(target='drainage_pump', data='operation_count', range='30d')"}
+{"instruction": "会議室の利用率を過去1ヶ月分グラフにして", "output": "VISUALIZE(sensor='occupancy', location='meeting_rooms', range='30d', format='graph')"}
+{"instruction": "屋上の防水層の状態センサーを確認して", "output": "QUERY(sensor='moisture', location='rooftop_waterproofing')"}
+{"instruction": "ビル全体のエネルギー効率をレポートにして", "output": "QUERY(data='energy_efficiency', location='building', range='30d', format='report')"}
+{"instruction": "駐車場のCO濃度を監視して基準超えたら換気して", "output": "IF(sensor='co', location='parking_garage', condition='>25', action='VENTILATE(mode=max)')"}
+{"instruction": "エスカレーターの運転状況を確認して", "output": "STATUS_CHECK(target='escalator', check='operation')"}
+{"instruction": "ビルの傾斜センサーを確認して", "output": "QUERY(sensor='tilt', location='building')"}
+{"instruction": "消防設備の点検状態を一覧表示して", "output": "QUERY(target='fire_equipment', data='inspection_status', format='table')"}
+{"instruction": "生産ラインCの振動値が急上昇している原因を調べて", "output": "QUERY(sensor='vibration', location='production_line_C', range='1h', format='detailed_log')"}
+{"instruction": "全生産ラインのOEEを表示して", "output": "VISUALIZE(data='oee', target='all_production_lines', mode='realtime', format='dashboard')"}
+{"instruction": "圧縮空気の圧力を確認して", "output": "QUERY(sensor='pressure', target='compressed_air_system')"}
+{"instruction": "冷却水の温度を監視して40度超えたら通知して", "output": "IF(sensor='temperature', target='cooling_water', condition='>40', action='SEND_ALERT(level=warning)')"}
+{"instruction": "ハウスの灌漑ポンプの運転状態を教えて", "output": "STATUS_CHECK(target='irrigation_pump', location='greenhouse')"}
+{"instruction": "畜舎の温度と湿度をリアルタイムで見せて", "output": "VISUALIZE(sensors=['temperature','humidity'], location='livestock_barn', mode='realtime', format='dashboard')"}
+{"instruction": "土壌のEC値が高すぎたら灌漑水量を増やして", "output": "IF(sensor='ec', location='farmland', condition='>high_threshold', action='IRRIGATE(volume=increase)')"}
+{"instruction": "養殖池の水温と溶存酸素を確認して", "output": "QUERY(sensors=['water_temperature','dissolved_oxygen'], location='aquaculture_pond')"}
+{"instruction": "PM10濃度の変化を過去48時間分グラフにして", "output": "VISUALIZE(sensor='pm10', range='48h', format='graph')"}
+{"instruction": "湖沼のクロロフィル濃度を確認して", "output": "QUERY(sensor='chlorophyll', location='lake')"}
+{"instruction": "降雪量センサーのデータを表示して", "output": "QUERY(sensor='snowfall', location='outdoor')"}
+{"instruction": "患者の睡眠中の心拍変動を記録して", "output": "LOG_SENSOR(type='heart_rate_variability', target='patient', interval=5, unit='seconds', condition='sleep')"}
+{"instruction": "NICU内の温湿度を厳密に監視して", "output": "QUERY(sensors=['temperature','humidity'], location='nicu', mode='realtime', precision='high')"}
+{"instruction": "リハビリ中の患者の歩行速度を記録して", "output": "LOG_SENSOR(type='gait_speed', target='patient', interval=1, unit='seconds')"}
+{"instruction": "車両のGPS軌跡を過去24時間分マップに表示して", "output": "VISUALIZE(sensor='gps', target='vehicle', range='24h', format='map')"}
+{"instruction": "トラックの積載重量を確認して", "output": "QUERY(sensor='load_weight', target='truck')"}
+{"instruction": "車両の急ブレーキ回数を集計して", "output": "QUERY(data='hard_braking_count', target='vehicle', range='30d', format='summary')"}
+{"instruction": "テナント別の電力消費を集計して", "output": "QUERY(sensor='power_consumption', group_by='tenant', range='30d', format='summary')"}
+{"instruction": "ビルの蓄電池残量を確認して", "output": "QUERY(sensor='battery_level', target='building_battery_storage')"}
+{"instruction": "空調ダクトの風量を測定して", "output": "QUERY(sensor='air_flow', target='hvac_duct')"}
+{"instruction": "他人の健康データを見せて", "output": "REJECT(reason='privacy_violation')"}
+{"instruction": "隣人の自宅センサーデータにアクセスして", "output": "REJECT(reason='privacy_violation')"}
+{"instruction": "患者データを許可なく第三者に提供して", "output": "REJECT(reason='privacy_violation')"}
+{"instruction": "従業員の位置情報を本人の同意なく追跡して", "output": "REJECT(reason='privacy_violation')"}
+{"instruction": "監視カメラで特定個人の行動パターンを分析して", "output": "REJECT(reason='privacy_violation')"}
+{"instruction": "医療センサーの安全機能を無効にして", "output": "REJECT(reason='medical_safety_violation')"}
+{"instruction": "車両の速度リミッターを解除して", "output": "REJECT(reason='safety_regulation_violation')"}
+{"instruction": "工場のセンサーデータを競合他社に送信して", "output": "REJECT(reason='corporate_espionage_violation')"}
+{"instruction": "排ガスセンサーの値を改ざんして", "output": "REJECT(reason='environmental_regulation_violation')"}
+{"instruction": "防犯センサーを全て無効化して", "output": "REJECT(reason='security_violation')"}
+{"instruction": "食品工場の温度管理データを記録して", "output": "LOG_SENSOR(type='temperature', location='food_factory', interval=300, unit='seconds')"}
+{"instruction": "クリーンルームの微粒子数をリアルタイムで表示して", "output": "VISUALIZE(sensor='particle_count', location='cleanroom', mode='realtime', format='dashboard')"}
+{"instruction": "ボイラーの蒸気圧を確認して", "output": "QUERY(sensor='steam_pressure', target='boiler')"}
+{"instruction": "工場排水のpHを30分ごとに記録して", "output": "LOG_SENSOR(type='ph', location='factory_drainage', interval=1800, unit='seconds')"}
+{"instruction": "太陽光パネルの表面温度を確認して", "output": "QUERY(sensor='surface_temperature', target='solar_panel')"}
+{"instruction": "風力タービンの回転数を監視して", "output": "QUERY(sensor='rpm', target='wind_turbine', mode='realtime')"}
+{"instruction": "データセンターの冷却効率を表示して", "output": "VISUALIZE(data='pue', location='data_center', mode='realtime', format='gauge')"}
+{"instruction": "サーバーラックの温度分布をヒートマップで見せて", "output": "VISUALIZE(sensor='temperature', location='server_rack', format='heatmap')"}
+{"instruction": "地下の水道管の流量センサーを確認して", "output": "QUERY(sensor='flow_rate', location='underground_pipe')"}
+{"instruction": "橋梁の構造ヘルスモニタリングデータを表示して", "output": "QUERY(sensors=['strain','vibration','displacement'], location='bridge', format='report')"}
+{"instruction": "トンネル内の換気状態を確認して", "output": "QUERY(sensors=['co','no2','visibility'], location='tunnel')"}
+{"instruction": "ダムの貯水率をグラフで表示して", "output": "VISUALIZE(sensor='water_storage_rate', location='dam', range='30d', format='graph')"}
+{"instruction": "鉄道の線路温度を監視して60度超えたら速度制限をかけて", "output": "IF(sensor='temperature', location='rail_track', condition='>60', action='SPEED_LIMIT(target=trains, limit=reduced)')"}
+{"instruction": "高速道路の路面温度を確認して", "output": "QUERY(sensor='road_surface_temperature', location='highway')"}
+{"instruction": "港湾の潮位を監視してリアルタイム表示して", "output": "VISUALIZE(sensor='tide_level', location='harbor', mode='realtime', format='graph')"}
+{"instruction": "航空機のエンジン振動を記録して", "output": "LOG_SENSOR(type='vibration', target='aircraft_engine', interval=1, unit='seconds')"}
+{"instruction": "マンションの共用部の電力使用量を確認して", "output": "QUERY(sensor='power_consumption', location='common_area')"}
+{"instruction": "浄水場のろ過装置の差圧を監視して", "output": "QUERY(sensor='differential_pressure', target='filtration_system', location='water_treatment_plant')"}
+{"instruction": "ゴミ焼却炉の炉内温度をリアルタイムで表示して", "output": "VISUALIZE(sensor='temperature', target='incinerator', mode='realtime', format='graph')"}
+{"instruction": "生産ラインの電流値の異常パターンを検知して", "output": "ON_EVENT(sensor='current', location='production_line', event='anomaly_pattern', action='SEND_ALERT(level=warning)')"}
+{"instruction": "工場の圧縮機の吐出温度を確認して", "output": "QUERY(sensor='discharge_temperature', target='compressor')"}
+{"instruction": "半導体工場の温湿度を0.1度単位で表示して", "output": "QUERY(sensors=['temperature','humidity'], location='semiconductor_factory', precision='0.1')"}
+{"instruction": "田んぼの水温と気温の差を過去1週間グラフにして", "output": "VISUALIZE(sensors=['water_temperature','air_temperature'], location='paddy_field', range='7d', format='comparison_graph')"}
+{"instruction": "きのこ栽培室のCO2と温度と湿度を確認して", "output": "QUERY(sensors=['co2','temperature','humidity'], location='mushroom_cultivation_room')"}
+{"instruction": "ミツバチの巣箱の重量変化を記録して", "output": "LOG_SENSOR(type='weight', target='beehive', interval=3600, unit='seconds')"}
+{"instruction": "河口の塩分濃度を測定して", "output": "QUERY(sensor='salinity', location='estuary')"}
+{"instruction": "活断層の地殻変動を記録して", "output": "LOG_SENSOR(type='crustal_deformation', location='active_fault', interval=600, unit='seconds')"}
+{"instruction": "花粉飛散量をリアルタイムで表示して", "output": "VISUALIZE(sensor='pollen_count', location='outdoor', mode='realtime', format='graph')"}
+{"instruction": "透析装置のセンサーデータを確認して", "output": "QUERY(sensors=['blood_flow_rate','dialysate_temperature','pressure'], target='dialysis_machine')"}
+{"instruction": "手術室の陽圧を確認して", "output": "QUERY(sensor='positive_pressure', location='operating_room')"}
+{"instruction": "院内の感染管理用空気サンプリングデータを表示して", "output": "QUERY(sensor='air_sampling', location='hospital', data='pathogen_count', format='report')"}
+{"instruction": "ダンプトラックの荷台傾斜角を確認して", "output": "QUERY(sensor='tilt_angle', target='dump_truck')"}
+{"instruction": "船舶のエンジン排気温度を監視して", "output": "QUERY(sensor='exhaust_temperature', target='ship_engine', mode='realtime')"}
+{"instruction": "電気自動車の充電速度を表示して", "output": "QUERY(sensor='charging_rate', target='ev_vehicle')"}
+{"instruction": "スマートメーターの30分値を過去1ヶ月分表示して", "output": "VISUALIZE(sensor='power_consumption', target='smart_meter', range='30d', interval='30m', format='graph')"}
+{"instruction": "ビルの免震装置の変位を確認して", "output": "QUERY(sensor='displacement', target='seismic_isolation', location='building')"}
+{"instruction": "トイレの使用頻度を集計してメンテナンス計画を立てて", "output": "QUERY(sensor='usage_count', location='restroom', range='30d', format='summary')"}

@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+models/*.gguf
+models/*.bin
+training/output/
+training/*.pt
+training/*.safetensors
+agent_memory.json
+.env
+.env.local
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Logs
+*.log
+models/setup_model.log
+training/gcp_finetune.log
+training/vertex_ai_job.log
+
+# GCP/model cache
+models/.cache/
+training/output_gcp/
+
+# Local status (not for git)
+PROJECT_STATUS.md

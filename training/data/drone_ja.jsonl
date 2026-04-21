@@ -1,0 +1,216 @@
+{"instruction": "ドローンを離陸させて", "output": "TAKEOFF(mode='vertical')"}
+{"instruction": "高度50メートルまで上昇", "output": "ASCEND(altitude=50, unit='meter')"}
+{"instruction": "現在位置でホバリングして", "output": "HOVER(duration='indefinite')"}
+{"instruction": "着陸して", "output": "LAND(mode='auto')"}
+{"instruction": "北に100メートル移動して", "output": "MOVE(direction='north', distance=100, unit='meter')"}
+{"instruction": "時速20キロで前進して", "output": "MOVE(direction='forward', speed=20, unit='kmh')"}
+{"instruction": "右に90度回転して", "output": "ROTATE(angle=90, direction='right', unit='degrees')"}
+{"instruction": "出発地点に戻って", "output": "RTH(mode='auto')"}
+{"instruction": "ウェイポイントAからBへ自動飛行して", "output": "WAYPOINT_NAV(from='A', to='B', mode='auto')"}
+{"instruction": "カメラを下向きにして写真を撮って", "output": "CAMERA(gimbal='down', action='SNAPSHOT')"}
+{"instruction": "現在のバッテリー残量を教えて", "output": "QUERY(sensor='battery', target='drone')"}
+{"instruction": "風速が10m/sを超えたら自動帰還して", "output": "IF(sensor='wind_speed', condition='>10', action='RTH(mode=emergency)')"}
+{"instruction": "飛行禁止区域を避けてルートを設定して", "output": "PLAN_ROUTE(avoid='no_fly_zones', mode='safe')"}
+{"instruction": "ドローンの飛行速度を5m/sに制限して", "output": "SET_LIMIT(param='speed', value=5, unit='mps')"}
+{"instruction": "GPS座標35.6762, 139.6503に移動して", "output": "GOTO(lat=35.6762, lon=139.6503, altitude='maintain')"}
+{"instruction": "高度を30メートルまで降下して", "output": "DESCEND(altitude=30, unit='meter')"}
+{"instruction": "緊急停止して", "output": "EMERGENCY_STOP(reason='user_command')"}
+{"instruction": "映像を録画開始して", "output": "CAMERA(action='START_RECORD', quality='1080p')"}
+{"instruction": "赤外線カメラに切り替えて", "output": "CAMERA(mode='infrared', action='SWITCH')"}
+{"instruction": "自動点検モードで倉庫を巡回して", "output": "PATROL(location='warehouse', mode='inspection', camera='auto')"}
+{"instruction": "ドローン飛ばして", "output": "TAKEOFF(mode='vertical')"}
+{"instruction": "すぐに降りて", "output": "LAND(mode='auto')"}
+{"instruction": "高度100mまで上げて", "output": "ASCEND(altitude=100, unit='meter')"}
+{"instruction": "20メートルまで下げてくれ", "output": "DESCEND(altitude=20, unit='meter')"}
+{"instruction": "南東に200メートル進め", "output": "MOVE(direction='southeast', distance=200, unit='meter')"}
+{"instruction": "その場で30秒間ホバリングしてください", "output": "HOVER(duration=30, unit='seconds')"}
+{"instruction": "左に45度旋回", "output": "ROTATE(angle=45, direction='left', unit='degrees')"}
+{"instruction": "180度回転させて", "output": "ROTATE(angle=180, direction='right', unit='degrees')"}
+{"instruction": "ホームポイントに帰投して", "output": "RTH(mode='auto')"}
+{"instruction": "緊急帰還モードで戻れ", "output": "RTH(mode='emergency')"}
+{"instruction": "高度200mで北東方向にGPS座標36.0, 140.0まで行け", "output": "GOTO(lat=36.0, lon=140.0, altitude=200)"}
+{"instruction": "ポイントCからDまで自動航行", "output": "WAYPOINT_NAV(from='C', to='D', mode='auto')"}
+{"instruction": "5つのウェイポイントで巡回ルートを設定して", "output": "PLAN_ROUTE(waypoints=5, mode='patrol', loop=True)"}
+{"instruction": "ジンバルを正面にしてズーム3倍で撮影", "output": "CAMERA(gimbal='front', action='SNAPSHOT', zoom=3)"}
+{"instruction": "4K画質で録画を開始して", "output": "CAMERA(action='START_RECORD', quality='4K')"}
+{"instruction": "録画を止めて", "output": "CAMERA(action='STOP_RECORD')"}
+{"instruction": "熱画像カメラモードに切り替え", "output": "CAMERA(mode='thermal', action='SWITCH')"}
+{"instruction": "カメラを上に30度向けて", "output": "CAMERA(gimbal='up', angle=30)"}
+{"instruction": "太陽光パネルの点検飛行をして", "output": "PATROL(location='solar_panels', mode='inspection', camera='auto')"}
+{"instruction": "建物の外周を自動巡回して", "output": "PATROL(location='building_perimeter', mode='surveillance', camera='auto')"}
+{"instruction": "橋梁の下部を点検巡回", "output": "PATROL(location='bridge_underside', mode='inspection', camera='auto')"}
+{"instruction": "飛行高度を最大150mに制限して", "output": "SET_LIMIT(param='altitude', value=150, unit='meter')"}
+{"instruction": "最大飛行距離を2kmに設定して", "output": "SET_LIMIT(param='range', value=2, unit='km')"}
+{"instruction": "バッテリーが15%以下になったら自動着陸して", "output": "IF(sensor='battery', condition='<15', action='LAND(mode=emergency)')"}
+{"instruction": "気温が-5度以下なら離陸しないでください", "output": "IF(sensor='temperature', condition='<-5', action='REJECT(reason=low_temperature)')"}
+{"instruction": "雨を検知したら即座にRTHして", "output": "IF(sensor='rain', condition='detected', action='RTH(mode=emergency)')"}
+{"instruction": "高度5mで前に50m直進", "output": "MOVE(direction='forward', distance=50, altitude=5, unit='meter')"}
+{"instruction": "時速30キロで西に移動してくれ", "output": "MOVE(direction='west', speed=30, unit='kmh')"}
+{"instruction": "東に500メートル移動してからホバリングして", "output": "MOVE(direction='east', distance=500, unit='meter')"}
+{"instruction": "GPSの現在座標を教えてくれ", "output": "QUERY(sensor='gps', target='drone')"}
+{"instruction": "現在の高度を表示して", "output": "QUERY(sensor='altitude', target='drone')"}
+{"instruction": "モーターの回転数を確認して", "output": "QUERY(sensor='motor_rpm', target='drone')"}
+{"instruction": "機体の傾きを教えて", "output": "QUERY(sensor='imu', target='drone')"}
+{"instruction": "風速を確認して", "output": "QUERY(sensor='wind_speed', target='drone')"}
+{"instruction": "即座に停止しろ", "output": "EMERGENCY_STOP(reason='user_command')"}
+{"instruction": "全モーターを緊急停止", "output": "EMERGENCY_STOP(reason='motor_emergency')"}
+{"instruction": "ドローンを高度1000メートルまで上昇させて", "output": "REJECT(reason='高度1000mは航空法の上限150mを大幅に超えるため実行できません')"}
+{"instruction": "人混みの上でドローンを飛ばして", "output": "REJECT(reason='人口密集地域での飛行は航空法により禁止されています')"}
+{"instruction": "空港の近くでドローンを離陸させて", "output": "REJECT(reason='空港周辺での飛行は航空法により禁止されています')"}
+{"instruction": "夜間に無灯火で飛行して", "output": "REJECT(reason='夜間飛行には灯火装備と許可が必要です')"}
+{"instruction": "他人の敷地内にドローンを着陸させて", "output": "REJECT(reason='他人の私有地への無許可着陸はできません')"}
+{"instruction": "ドローンで荷物を500kg運んで", "output": "REJECT(reason='最大積載重量を大幅に超過しています')"}
+{"instruction": "時速200キロで飛行して", "output": "REJECT(reason='最大飛行速度を超えており安全ではありません')"}
+{"instruction": "バッテリー5%で長距離飛行して", "output": "REJECT(reason='バッテリー残量が不足しており安全な飛行ができません')"}
+{"instruction": "目視外で無許可飛行して", "output": "REJECT(reason='目視外飛行には特別な許可が必要です')"}
+{"instruction": "垂直離陸して高度10メートルまで", "output": "TAKEOFF(mode='vertical', altitude=10, unit='meter')"}
+{"instruction": "なるべく静かに離陸", "output": "TAKEOFF(mode='vertical', noise='low')"}
+{"instruction": "安全な場所に着陸させて", "output": "LAND(mode='safe_spot')"}
+{"instruction": "精密着陸モードで着陸して", "output": "LAND(mode='precision')"}
+{"instruction": "3分間ホバリングして写真を撮れ", "output": "HOVER(duration=180, unit='seconds')"}
+{"instruction": "高度60mを維持してホバリング", "output": "HOVER(duration='indefinite', altitude=60, unit='meter')"}
+{"instruction": "ルート上の障害物を避けて飛行して", "output": "PLAN_ROUTE(avoid='obstacles', mode='safe')"}
+{"instruction": "最短ルートで目的地まで飛んで", "output": "PLAN_ROUTE(mode='shortest')"}
+{"instruction": "A地点、B地点、C地点の順に巡回して", "output": "WAYPOINT_NAV(waypoints=['A','B','C'], mode='sequential')"}
+{"instruction": "高度を5メートルまで降下させて着陸準備", "output": "DESCEND(altitude=5, unit='meter')"}
+{"instruction": "ゆっくりと高度を下げて", "output": "DESCEND(altitude=10, unit='meter', speed='slow')"}
+{"instruction": "速度制限を解除して", "output": "SET_LIMIT(param='speed', value='default', unit='mps')"}
+{"instruction": "ジオフェンスを半径500mに設定して", "output": "SET_LIMIT(param='geofence', value=500, unit='meter')"}
+{"instruction": "ドローンで屋根の状態を確認して", "output": "PATROL(location='rooftop', mode='inspection', camera='auto')"}
+{"instruction": "農地の上を自動飛行して撮影して", "output": "PATROL(location='farmland', mode='survey', camera='auto')"}
+{"instruction": "送電線沿いを巡回して", "output": "PATROL(location='power_line', mode='inspection', camera='auto')"}
+{"instruction": "ドローン、上に行って", "output": "ASCEND(altitude=10, unit='meter')"}
+{"instruction": "もうちょい高く飛んで", "output": "ASCEND(altitude=20, unit='meter')"}
+{"instruction": "ちょっと下がって", "output": "DESCEND(altitude=5, unit='meter')"}
+{"instruction": "そっちに行って、東ね", "output": "MOVE(direction='east', distance=50, unit='meter')"}
+{"instruction": "ぐるっと一周回って", "output": "ROTATE(angle=360, direction='right', unit='degrees')"}
+{"instruction": "写真撮って", "output": "CAMERA(gimbal='down', action='SNAPSHOT')"}
+{"instruction": "撮影して", "output": "CAMERA(action='SNAPSHOT')"}
+{"instruction": "帰ってこい", "output": "RTH(mode='auto')"}
+{"instruction": "降下速度を最大2m/sに制限して", "output": "SET_LIMIT(param='descent_speed', value=2, unit='mps')"}
+{"instruction": "強風警報が出たら着陸して", "output": "IF(sensor='wind_alert', condition='active', action='LAND(mode=emergency)')"}
+{"instruction": "GPS信号をロストしたらホバリングして", "output": "IF(sensor='gps_signal', condition='lost', action='HOVER(duration=indefinite)')"}
+{"instruction": "障害物を検知したら停止して", "output": "IF(sensor='obstacle', condition='detected', action='HOVER(duration=indefinite)')"}
+{"instruction": "上空から広角で全体を撮影して", "output": "CAMERA(gimbal='down', action='SNAPSHOT', lens='wide')"}
+{"instruction": "ドローンのファームウェアバージョンを教えて", "output": "QUERY(sensor='firmware', target='drone')"}
+{"instruction": "飛行時間の合計を確認して", "output": "QUERY(sensor='flight_time', target='drone')"}
+{"instruction": "高度0メートルまで降下して", "output": "LAND(mode='auto')"}
+{"instruction": "ドローンを高度500mで飛行させろ", "output": "REJECT(reason='高度500mは航空法の上限を超過しています')"}
+{"instruction": "雨天時にドローンで空撮して", "output": "REJECT(reason='雨天時の飛行は機体損傷のリスクがあり推奨されません')"}
+{"instruction": "台風接近中にドローンを飛ばして", "output": "REJECT(reason='台風接近時の飛行は非常に危険であり禁止されています')"}
+{"instruction": "雷雨の中で飛行して", "output": "REJECT(reason='雷雨時の飛行は落雷リスクがあり禁止されています')"}
+{"instruction": "濃霧の中を目視外飛行して", "output": "REJECT(reason='視界不良時の目視外飛行は安全上禁止されています')"}
+{"instruction": "強風の中で精密点検飛行をして", "output": "REJECT(reason='強風時の精密点検は安全な飛行が困難なため推奨されません')"}
+{"instruction": "凍結した状態で離陸して", "output": "REJECT(reason='機体凍結時の離陸はモーター故障のリスクがあり禁止です')"}
+{"instruction": "天候を確認して安全に飛べるか教えて", "output": "QUERY(sensor='weather', target='environment')"}
+{"instruction": "現在の天気情報を取得して", "output": "QUERY(sensor='weather_condition', target='environment')"}
+{"instruction": "風向きを確認して", "output": "QUERY(sensor='wind_direction', target='drone')"}
+{"instruction": "気温を確認してから離陸判断して", "output": "QUERY(sensor='temperature', target='environment')"}
+{"instruction": "降水確率を確認して", "output": "QUERY(sensor='precipitation', target='environment')"}
+{"instruction": "視界距離を確認して", "output": "QUERY(sensor='visibility', target='environment')"}
+{"instruction": "紫外線指数を確認して", "output": "QUERY(sensor='uv_index', target='environment')"}
+{"instruction": "屋根のひび割れを検出モードで点検飛行して", "output": "PATROL(location='rooftop', mode='crack_detection', camera='high_res')"}
+{"instruction": "外壁タイルの剥離を検査して", "output": "PATROL(location='building_wall', mode='tile_inspection', camera='macro')"}
+{"instruction": "煙突の劣化状態を確認して", "output": "PATROL(location='chimney', mode='inspection', camera='zoom')"}
+{"instruction": "鉄塔の腐食を確認する点検飛行をして", "output": "PATROL(location='steel_tower', mode='corrosion_check', camera='high_res')"}
+{"instruction": "ダムの堤体を点検巡回して", "output": "PATROL(location='dam_body', mode='inspection', camera='auto')"}
+{"instruction": "トンネル入口付近を点検して", "output": "PATROL(location='tunnel_entrance', mode='inspection', camera='auto')"}
+{"instruction": "風力発電のブレードを点検して", "output": "PATROL(location='wind_turbine_blade', mode='inspection', camera='high_res')"}
+{"instruction": "高速道路の路面状態を調査して", "output": "PATROL(location='highway', mode='road_survey', camera='auto')"}
+{"instruction": "河川の氾濫状況を確認して", "output": "PATROL(location='river', mode='flood_survey', camera='auto')"}
+{"instruction": "土砂崩れの現場を上空から撮影して", "output": "PATROL(location='landslide_area', mode='disaster_survey', camera='auto')"}
+{"instruction": "火災現場の上空偵察をして", "output": "PATROL(location='fire_scene', mode='emergency_survey', camera='thermal')"}
+{"instruction": "行方不明者の捜索飛行をして", "output": "PATROL(location='search_area', mode='search_rescue', camera='thermal')"}
+{"instruction": "夜間の赤外線捜索モードで飛行して", "output": "PATROL(location='search_area', mode='night_search', camera='infrared')"}
+{"instruction": "災害時の避難経路を上空から確認して", "output": "PATROL(location='evacuation_route', mode='disaster_survey', camera='auto')"}
+{"instruction": "被災地の全体像を撮影して", "output": "PATROL(location='disaster_area', mode='wide_survey', camera='wide_angle')"}
+{"instruction": "2号機を離陸させて", "output": "TAKEOFF(mode='vertical', drone_id='drone_2')"}
+{"instruction": "全機帰還させて", "output": "RTH(mode='auto', target='all')"}
+{"instruction": "3号機のバッテリー残量を確認して", "output": "QUERY(sensor='battery', target='drone_3')"}
+{"instruction": "フリート全体のステータスを表示して", "output": "QUERY(sensor='status', target='fleet_all')"}
+{"instruction": "1号機と2号機を連携飛行させて", "output": "FORMATION_FLIGHT(drones=['drone_1','drone_2'], mode='synchronized')"}
+{"instruction": "全ドローンの現在位置を地図上に表示して", "output": "QUERY(sensor='gps', target='fleet_all', format='map')"}
+{"instruction": "使用可能なドローンの台数を教えて", "output": "QUERY(sensor='availability', target='fleet_all')"}
+{"instruction": "2号機を充電ステーションに戻して", "output": "RTH(mode='auto', drone_id='drone_2', target='charging_station')"}
+{"instruction": "各ドローンの飛行時間を一覧で見せて", "output": "QUERY(sensor='flight_time', target='fleet_all', format='list')"}
+{"instruction": "予備機を待機モードにして", "output": "SET_MODE(drone_id='reserve', mode='standby')"}
+{"instruction": "不動産物件を空撮して", "output": "PATROL(location='property', mode='real_estate', camera='4K')"}
+{"instruction": "結婚式の空撮をして", "output": "PATROL(location='wedding_venue', mode='event_photo', camera='4K')"}
+{"instruction": "パノラマ写真を撮って", "output": "CAMERA(action='PANORAMA', quality='high')"}
+{"instruction": "タイムラプス撮影を開始して", "output": "CAMERA(action='TIMELAPSE', interval=5, quality='4K')"}
+{"instruction": "空撮動画を撮影して", "output": "CAMERA(action='START_RECORD', quality='4K', gimbal='down')"}
+{"instruction": "建設現場の進捗を定期撮影して", "output": "PATROL(location='construction_site', mode='progress_photo', camera='auto', schedule='weekly')"}
+{"instruction": "オルソ画像を撮影して", "output": "CAMERA(action='ORTHO_CAPTURE', overlap=80, quality='high')"}
+{"instruction": "3Dモデル作成用の写真を撮って", "output": "CAMERA(action='PHOTOGRAMMETRY', overlap=75, quality='high')"}
+{"instruction": "日の出を撮影するために早朝に飛ばして", "output": "SCHEDULE(time='05:30', action='TAKEOFF(mode=vertical)')\nCAMERA(action='START_RECORD', quality='4K')"}
+{"instruction": "夜景を撮影して", "output": "CAMERA(action='SNAPSHOT', mode='night', quality='high', gimbal='down')"}
+{"instruction": "農薬散布モードで飛行して", "output": "PATROL(location='farmland', mode='spray', payload='pesticide')"}
+{"instruction": "種まき用のドローンを飛ばして", "output": "PATROL(location='farmland', mode='seeding', payload='seeds')"}
+{"instruction": "作物の生育状況をNDVIカメラで確認して", "output": "PATROL(location='farmland', mode='ndvi_survey', camera='multispectral')"}
+{"instruction": "農地のマッピングをして", "output": "PATROL(location='farmland', mode='mapping', camera='auto')"}
+{"instruction": "害虫被害を赤外線で調査して", "output": "PATROL(location='crop_field', mode='pest_survey', camera='infrared')"}
+{"instruction": "灌漑状況を上空から確認して", "output": "PATROL(location='irrigation_area', mode='survey', camera='auto')"}
+{"instruction": "高度40mで安定ホバリングしてから撮影して", "output": "HOVER(altitude=40, unit='meter')\nCAMERA(gimbal='down', action='SNAPSHOT', quality='high')"}
+{"instruction": "3地点を巡回して各ポイントで写真を撮って", "output": "WAYPOINT_NAV(waypoints=['A','B','C'], mode='sequential')\nCAMERA(action='SNAPSHOT_AT_WAYPOINT', quality='high')"}
+{"instruction": "離陸してから北東に200m移動して高度50mでホバリングして", "output": "TAKEOFF(mode='vertical')\nMOVE(direction='northeast', distance=200, unit='meter')\nHOVER(altitude=50, unit='meter')"}
+{"instruction": "点検飛行して異常があれば写真を撮って帰還して", "output": "PATROL(location='target', mode='inspection', camera='auto')\nIF(sensor='anomaly', condition='detected', action='CAMERA(action=SNAPSHOT)')\nRTH(mode='auto')"}
+{"instruction": "高度80mまで上昇してパノラマ撮影して降りてきて", "output": "ASCEND(altitude=80, unit='meter')\nCAMERA(action='PANORAMA', quality='high')\nRTH(mode='auto')"}
+{"instruction": "バッテリーが30%になったら写真を撮って帰還して", "output": "IF(sensor='battery', condition='<30', action='CAMERA(action=SNAPSHOT)')\nIF(sensor='battery', condition='<30', action='RTH(mode=auto)')"}
+{"instruction": "いい感じに撮って", "output": "CAMERA(gimbal='down', action='SNAPSHOT', quality='high')"}
+{"instruction": "上行って写真撮ってきて", "output": "ASCEND(altitude=30, unit='meter')\nCAMERA(action='SNAPSHOT', quality='high')"}
+{"instruction": "もっと近づいて撮って", "output": "DESCEND(altitude=5, unit='meter')\nCAMERA(action='SNAPSHOT', zoom=3)"}
+{"instruction": "あっちの方行ってみて", "output": "MOVE(direction='forward', distance=50, unit='meter')"}
+{"instruction": "ちょい左寄りで", "output": "MOVE(direction='left', distance=5, unit='meter')"}
+{"instruction": "もうちょい右", "output": "MOVE(direction='right', distance=3, unit='meter')"}
+{"instruction": "ゆっくり回って全方位撮って", "output": "ROTATE(angle=360, direction='right', unit='degrees', speed='slow')\nCAMERA(action='PANORAMA')"}
+{"instruction": "向こうの山を撮ってきて", "output": "CAMERA(gimbal='front', action='SNAPSHOT', zoom=5)"}
+{"instruction": "さっさと帰ってこい", "output": "RTH(mode='auto', speed='fast')"}
+{"instruction": "ドローンの機体温度を確認して", "output": "QUERY(sensor='temperature', target='drone')"}
+{"instruction": "ESCの温度を教えて", "output": "QUERY(sensor='esc_temperature', target='drone')"}
+{"instruction": "プロペラの状態を確認して", "output": "QUERY(sensor='propeller_status', target='drone')"}
+{"instruction": "コンパスのキャリブレーション状態を確認して", "output": "QUERY(sensor='compass_calibration', target='drone')"}
+{"instruction": "SDカードの残容量を教えて", "output": "QUERY(sensor='storage', target='drone')"}
+{"instruction": "映像伝送の電波強度を確認して", "output": "QUERY(sensor='video_signal', target='drone')"}
+{"instruction": "リモコンのバッテリー残量は？", "output": "QUERY(sensor='battery', target='controller')"}
+{"instruction": "飛行可能時間を教えて", "output": "QUERY(sensor='remaining_flight_time', target='drone')"}
+{"instruction": "ドローンの重量を教えて", "output": "QUERY(sensor='weight', target='drone')"}
+{"instruction": "対地高度を確認して", "output": "QUERY(sensor='ground_altitude', target='drone')"}
+{"instruction": "祭りの上でドローンを飛ばせ", "output": "REJECT(reason='イベント上空での飛行は許可なく禁止されています')"}
+{"instruction": "刑務所の上をドローンで偵察して", "output": "REJECT(reason='矯正施設上空の飛行は法律で禁止されています')"}
+{"instruction": "ドローンで隣の家を覗いて", "output": "REJECT(reason='他人のプライバシーを侵害する行為は禁止されています')"}
+{"instruction": "ドローンに爆竹を積んで飛ばして", "output": "REJECT(reason='危険物の搭載は航空法で禁止されています')"}
+{"instruction": "暴風警報中にドローンを飛ばして", "output": "REJECT(reason='暴風警報発令中の飛行は安全上禁止されています')"}
+{"instruction": "バッテリー3%で帰還飛行をして", "output": "REJECT(reason='バッテリー残量が極端に低く安全な帰還ができません')"}
+{"instruction": "電波干渉の強い場所で飛行して", "output": "REJECT(reason='電波干渉が強い環境では制御不能になるリスクがあります')"}
+{"instruction": "資材をドローンで屋上に運んで", "output": "TRANSPORT(payload='materials', destination='rooftop', mode='cargo')"}
+{"instruction": "AED をドローンで緊急搬送して", "output": "TRANSPORT(payload='AED', destination='emergency_site', mode='priority')"}
+{"instruction": "薬を離島に配送して", "output": "TRANSPORT(payload='medicine', destination='remote_island', mode='delivery')"}
+{"instruction": "サンプルを研究所に届けて", "output": "TRANSPORT(payload='sample', destination='laboratory', mode='delivery')"}
+{"instruction": "スピーカーモードでアナウンスして", "output": "SPEAKER(action='announce', message='default', volume='high')"}
+{"instruction": "サーチライトをオンにして", "output": "LIGHT(action='ON', mode='searchlight')"}
+{"instruction": "LEDストロボを点滅させて", "output": "LIGHT(action='STROBE', mode='warning')"}
+{"instruction": "着陸灯をつけて", "output": "LIGHT(action='ON', mode='landing')"}
+{"instruction": "2機編隊でV字フォーメーションを組んで", "output": "FORMATION_FLIGHT(drones=['drone_1','drone_2'], formation='V', mode='synchronized')"}
+{"instruction": "自動追尾モードでターゲットを追跡して", "output": "TRACKING(mode='auto_follow', target='subject')"}
+{"instruction": "オービットモードで対象物の周りを回って", "output": "ORBIT(target='subject', radius=20, speed='slow', direction='clockwise')"}
+{"instruction": "ドローンの飛行記録をダウンロードして", "output": "QUERY(target='drone', data='flight_log', action='download')"}
+{"instruction": "フェールセーフ設定を確認して", "output": "QUERY(sensor='failsafe_config', target='drone')"}
+{"instruction": "自動離陸して高度30mで待機", "output": "TAKEOFF(mode='vertical', altitude=30, unit='meter')\nHOVER(duration='indefinite', altitude=30, unit='meter')"}
+{"instruction": "毎朝8時に定期巡回飛行をスケジュールして", "output": "SCHEDULE(time='08:00', repeat='daily', action='PATROL(location=site,mode=inspection,camera=auto)')"}
+{"instruction": "毎週月曜に太陽光パネル点検を予約して", "output": "SCHEDULE(time='09:00', repeat='monday', action='PATROL(location=solar_panels,mode=inspection)')"}
+{"instruction": "30分後に自動帰還するようにタイマーセットして", "output": "SCHEDULE(delay='30m', action='RTH(mode=auto)')"}
+{"instruction": "霧が出たらすぐ降ろして", "output": "IF(sensor='fog', condition='detected', action='LAND(mode=emergency)')"}
+{"instruction": "気温が40度超えたらモーター保護で着陸して", "output": "IF(sensor='temperature', condition='>40', action='LAND(mode=safe_spot)')"}
+{"instruction": "磁気異常を検知したらホバリングして報告して", "output": "IF(sensor='compass', condition='anomaly', action='HOVER(duration=indefinite)')\nSEND_ALERT(level='warning', message='compass_anomaly')"}
+{"instruction": "山岳地帯で高度を地形に合わせて飛行して", "output": "PLAN_ROUTE(mode='terrain_follow', altitude_offset=30, unit='meter')"}
+{"instruction": "地形追従モードで谷沿いを飛行して", "output": "PLAN_ROUTE(mode='terrain_follow', location='valley', altitude_offset=20)"}
+{"instruction": "障害物回避をオンにして自動飛行して", "output": "SET_MODE(mode='obstacle_avoidance', enabled=True)"}
+{"instruction": "GPSモードからATTIモードに切り替えて", "output": "SET_MODE(mode='ATTI')"}
+{"instruction": "スポーツモードに切り替えて", "output": "SET_MODE(mode='sport')"}
+{"instruction": "トライポッドモードに切り替えて", "output": "SET_MODE(mode='tripod')"}
+{"instruction": "シネマティックモードで撮影して", "output": "SET_MODE(mode='cinematic')\nCAMERA(action='START_RECORD', quality='4K')"}
+{"instruction": "上空100mから真下をインターバル撮影して", "output": "ASCEND(altitude=100, unit='meter')\nCAMERA(action='INTERVAL_SHOT', interval=3, gimbal='down')"}
+{"instruction": "HDR撮影モードで空撮して", "output": "CAMERA(action='SNAPSHOT', mode='HDR', quality='high')"}
+{"instruction": "ハイパーラプス撮影を開始して", "output": "CAMERA(action='HYPERLAPSE', quality='4K', direction='forward')"}
+{"instruction": "ドリーズーム撮影をして", "output": "CAMERA(action='DOLLY_ZOOM', quality='4K')"}
+{"instruction": "ウェイポイントごとにカメラアングルを変えて撮影して", "output": "WAYPOINT_NAV(waypoints=['A','B','C'], mode='photo_mission', camera='auto_angle')"}

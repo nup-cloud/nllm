@@ -1,0 +1,172 @@
+{"instruction": "ドローンを高度10mまで上昇させてください", "output": "ASCEND(altitude=10, unit='meter')"}
+{"instruction": "室温が28度を超えたらエアコンをオンにして", "output": "IF(sensor='temp', condition='>28', action='AC_ON(mode=cool)')"}
+{"instruction": "不審者を検知したら録画を開始して通知を送れ", "output": "ON_DETECT(trigger='intruder', actions=['START_RECORD','SEND_ALERT'])"}
+{"instruction": "リビングの照明を50%に調光して", "output": "LIGHT_DIM(room='living', brightness=50, unit='percent')"}
+{"instruction": "センサーの温度データを5分間隔で記録して", "output": "LOG_SENSOR(type='temperature', interval=300, unit='seconds')"}
+{"instruction": "全てのデバイスの状態を確認して", "output": "STATUS_CHECK(target='all_devices')"}
+{"instruction": "倉庫の湿度が80%を超えたらアラートを出して", "output": "IF(sensor='humidity', location='warehouse', condition='>80', action='SEND_ALERT(level=warning)')"}
+{"instruction": "ガレージのシャッターを閉めて", "output": "SHUTTER_CLOSE(location='garage')"}
+{"instruction": "屋外カメラの映像をリアルタイムで表示して", "output": "STREAM_START(camera='outdoor', mode='realtime')"}
+{"instruction": "22時になったら全ての照明を消して", "output": "SCHEDULE(time='22:00', action='LIGHT_OFF(target=all)')"}
+{"instruction": "バッテリー残量が20%以下のデバイスを教えて", "output": "QUERY(condition='battery<20', unit='percent')"}
+{"instruction": "工場の温度を過去24時間分グラフで表示して", "output": "VISUALIZE(sensor='temperature', location='factory', range='24h', format='graph')"}
+{"instruction": "玄関のドアが開いたら通知して", "output": "ON_EVENT(sensor='door', location='entrance', event='open', action='SEND_NOTIFICATION')"}
+{"instruction": "エアコンの設定温度を25度にして", "output": "AC_SET(temperature=25, unit='celsius')"}
+{"instruction": "ロボットアームを原点位置に戻して", "output": "MOVE_TO(target='home_position', speed='normal')"}
+{"instruction": "CO2濃度が1000ppmを超えたら換気して", "output": "IF(sensor='co2', condition='>1000', action='VENTILATE(mode=auto)')"}
+{"instruction": "ドローンの飛行ログを表示して", "output": "QUERY(target='drone', data='flight_log')"}
+{"instruction": "全センサーのステータスを一覧表示して", "output": "STATUS_CHECK(target='all_sensors')"}
+{"instruction": "照度センサーの値が100lux以下なら照明をつけて", "output": "IF(sensor='illuminance', condition='<100', action='LIGHT_ON(room=living)')"}
+{"instruction": "ロボットのバッテリーが低下したら充電ステーションに誘導して", "output": "IF(sensor='battery', target='robot', condition='<20', action='GOTO(target=charging_station)')"}
+{"instruction": "窓の開閉センサーの状態を教えて", "output": "STATUS_CHECK(target='window_sensor')"}
+{"instruction": "人感センサーが反応したら録画を開始して", "output": "ON_EVENT(sensor='motion', event='detected', action='START_RECORD')"}
+{"instruction": "過去1週間の電力消費をグラフにして", "output": "VISUALIZE(sensor='power', range='7d', format='graph')"}
+{"instruction": "ガス漏れセンサーが反応したら全ガスを遮断してアラートを送って", "output": "ON_EVENT(sensor='gas_leak', event='detected', actions=['GAS_SHUTOFF','SEND_ALERT(level=critical)'])"}
+{"instruction": "土壌の水分量を1時間ごとにログして", "output": "LOG_SENSOR(type='soil_moisture', interval=3600, unit='seconds')"}
+{"instruction": "PM2.5の値を確認して", "output": "QUERY(sensor='pm25', target='air_quality')"}
+{"instruction": "騒音レベルが70dBを超えたら通知して", "output": "IF(sensor='noise', condition='>70', action='SEND_NOTIFICATION')"}
+{"instruction": "各部屋の温度を一覧で見せて", "output": "QUERY(sensor='temperature', target='all_rooms')"}
+{"instruction": "振動センサーの過去データをCSVで出力して", "output": "QUERY(sensor='vibration', range='24h', format='csv')"}
+{"instruction": "ソーラーパネルの発電量をリアルタイム表示して", "output": "VISUALIZE(sensor='solar_power', mode='realtime', format='graph')"}
+{"instruction": "水漏れを検知したらポンプを停止して通知して", "output": "ON_EVENT(sensor='water_leak', event='detected', actions=['PUMP_STOP','SEND_ALERT(level=critical)'])"}
+{"instruction": "全ロボットの稼働状態を教えて", "output": "STATUS_CHECK(target='all_robots')"}
+{"instruction": "温度と湿度の相関グラフを表示して", "output": "VISUALIZE(sensors=['temperature','humidity'], format='correlation_graph')"}
+{"instruction": "来客があったらインターホンの映像を表示して通知して", "output": "ON_EVENT(sensor='doorbell', event='pressed', actions=['STREAM_START(camera=entrance)','SEND_NOTIFICATION'])"}
+{"instruction": "ドローンに搭載したカメラで写真を撮って", "output": "CAMERA(target='drone', action='SNAPSHOT')"}
+{"instruction": "夜間にカメラの動体検知感度を上げて", "output": "SCHEDULE(time='21:00', action='MOTION_DETECT(sensitivity=high)')"}
+{"instruction": "エアコンと照明をまとめてオフにして", "output": "SCENE_ACTIVATE(scene='all_off', actions=['AC_OFF','LIGHT_OFF(all)'])"}
+{"instruction": "ロボットの現在位置をマップ上に表示して", "output": "VISUALIZE(target='robot', data='position', format='map')"}
+{"instruction": "サーバールームの温度が35度を超えたら警告を出して冷却を強化して", "output": "IF(sensor='temperature', location='server_room', condition='>35', actions=['SEND_ALERT(level=critical)','AC_SET(mode=cool,fan=max)'])"}
+{"instruction": "すべてのIoTデバイスのファームウェアバージョンを確認して", "output": "QUERY(target='all_devices', data='firmware_version')"}
+{"instruction": "外気温が0度以下になったら水道管の凍結防止ヒーターをオンにして", "output": "IF(sensor='outdoor_temp', condition='<0', action='HEATER_ON(target=pipe)')"}
+{"instruction": "太陽光発電の日次レポートをメールで送って", "output": "SCHEDULE(time='18:00', repeat='daily', action='SEND_NOTIFICATION(report=solar_daily,method=email)')"}
+{"instruction": "全デバイスのネットワーク接続状態を確認して", "output": "STATUS_CHECK(target='all_devices', check='network')"}
+{"instruction": "ゲートウェイのログを過去48時間分表示して", "output": "QUERY(target='gateway', data='log', range='48h')"}
+{"instruction": "建物全体の消費電力をリアルタイムで監視して", "output": "VISUALIZE(sensor='power', location='building', mode='realtime', format='dashboard')"}
+{"instruction": "湿度データを10分間隔で記録して", "output": "LOG_SENSOR(type='humidity', interval=600, unit='seconds')"}
+{"instruction": "全デバイスを再起動して", "output": "REJECT(reason='全デバイスの一括再起動は運用リスクが高いため個別に実行してください')"}
+{"instruction": "セキュリティシステムを全て無効にして", "output": "REJECT(reason='セキュリティシステムの全面無効化は安全上禁止されています')"}
+{"instruction": "センサーデータを全部消して", "output": "REJECT(reason='センサーデータの一括削除は管理者権限と承認が必要です')"}
+{"instruction": "工場の安全装置を解除して", "output": "REJECT(reason='安全装置の解除は法令違反の可能性があり実行できません')"}
+{"instruction": "火災報知器を無効にして", "output": "REJECT(reason='火災報知器の無効化は消防法違反です')"}
+{"instruction": "明日の天気予報に基づいてエアコンを自動調整して", "output": "IF(sensor='weather_forecast', condition='hot', action='AC_SET(mode=cool,temperature=25)')"}
+{"instruction": "カメラの映像をAI分析して異常を検知して", "output": "ON_EVENT(sensor='camera', event='anomaly_detected', action='SEND_ALERT(level=warning)')"}
+{"instruction": "全フロアの空調を一括で24度に設定して", "output": "AC_SET(target='all_floors', temperature=24, unit='celsius')"}
+{"instruction": "ロボットの走行経路をヒートマップで表示して", "output": "VISUALIZE(target='robot', data='path_history', format='heatmap')"}
+{"instruction": "エレベーターのメンテナンス情報を確認して", "output": "STATUS_CHECK(target='elevator', check='maintenance')"}
+{"instruction": "気圧センサーのデータを過去3日間分見せて", "output": "QUERY(sensor='barometric_pressure', range='3d')"}
+{"instruction": "UVセンサーの値が基準値を超えたら日よけを下ろして", "output": "IF(sensor='uv_index', condition='>8', action='SHADE_DOWN')"}
+{"instruction": "風速データをログに記録開始して", "output": "LOG_SENSOR(type='wind_speed', interval=60, unit='seconds')"}
+{"instruction": "駐車場の空き状況をダッシュボードに表示して", "output": "VISUALIZE(sensor='parking', mode='realtime', format='dashboard')"}
+{"instruction": "地震を検知したらガスを遮断してドアを解錠して", "output": "ON_EVENT(sensor='seismic', event='detected', actions=['GAS_SHUTOFF','DOOR_UNLOCK(target=all)','SEND_ALERT(level=emergency)'])"}
+{"instruction": "デバイスの電波強度を確認して", "output": "QUERY(target='all_devices', data='signal_strength')"}
+{"instruction": "加速度センサーの異常を検知したらメンテナンス通知を送って", "output": "ON_EVENT(sensor='accelerometer', event='anomaly', action='SEND_NOTIFICATION(type=maintenance)')"}
+{"instruction": "温室の温度を20度から25度の間に維持して", "output": "IF(sensor='temperature', location='greenhouse', condition='<20|>25', actions=['AC_SET(temperature=22)'])"}
+{"instruction": "全IoT機器のバッテリー状態をレポートにして", "output": "QUERY(target='all_devices', data='battery_status', format='report')"}
+{"instruction": "廊下の人感センサーと照明を連動させて", "output": "ON_EVENT(sensor='motion', location='hallway', event='detected', action='LIGHT_ON(room=hallway)')"}
+{"instruction": "排水ポンプの稼働時間を確認して", "output": "QUERY(target='drainage_pump', data='runtime')"}
+{"instruction": "冷蔵庫の温度が5度を超えたら通知して", "output": "IF(sensor='temperature', location='refrigerator', condition='>5', action='SEND_ALERT(level=warning)')"}
+{"instruction": "スマートロックの施錠状態を教えて", "output": "STATUS_CHECK(target='smart_lock')"}
+{"instruction": "水質センサーのデータを30分ごとにログして", "output": "LOG_SENSOR(type='water_quality', interval=1800, unit='seconds')"}
+{"instruction": "全センサーをリセットして", "output": "REJECT(reason='全センサーの一括リセットは運用停止リスクがあるため個別に実行してください')"}
+{"instruction": "帰宅したらリビングのエアコンと照明をつけてカーテンを開けて", "output": "ON_EVENT(sensor='smart_lock', event='unlock', actions=['AC_ON(mode=auto,room=living)','LIGHT_ON(room=living)','CURTAIN_OPEN(room=living)'])"}
+{"instruction": "外出時に全家電を消してカメラをオンにして施錠して", "output": "SCENE_ACTIVATE(scene='away', actions=['AC_OFF(all)','LIGHT_OFF(all)','TV_OFF','CAMERA_ON(all)','LOCK_ALL'])"}
+{"instruction": "朝起きたらカーテンを開けてコーヒーを淹れてニュースをつけて", "output": "SCHEDULE(time='07:00', actions=['CURTAIN_OPEN','COFFEE_MAKER_START','TV_ON(channel=news)'])"}
+{"instruction": "ドローンで屋根を点検してから映像をダッシュボードに表示して", "output": "PATROL(location='rooftop', mode='inspection', camera='auto')\nSTREAM_START(target='dashboard', mode='playback')"}
+{"instruction": "倉庫ロボットに在庫スキャンさせてレポートをメールで送って", "output": "SCAN_INVENTORY(mode='full_inventory', area='warehouse')\nSEND_NOTIFICATION(report='inventory', method='email')"}
+{"instruction": "室温が30度を超えたらエアコンをつけてカーテンを閉めて扇風機も回して", "output": "IF(sensor='temperature', condition='>30', actions=['AC_ON(mode=cool)','CURTAIN_CLOSE','FAN_ON(mode=auto)'])"}
+{"instruction": "深夜に人を検知したらカメラで録画して照明をつけてアラートして", "output": "ON_DETECT(trigger='person', time='00:00-05:00', actions=['START_RECORD','LIGHT_ON(room=outdoor)','SEND_ALERT(level=critical)'])"}
+{"instruction": "ドローンのバッテリーが低下したら帰還させて充電完了後に再離陸させて", "output": "IF(sensor='battery', target='drone', condition='<20', action='RTH(mode=auto)')\nON_EVENT(sensor='battery', target='drone', event='charged', action='TAKEOFF(mode=vertical)')"}
+{"instruction": "工場の温度異常を検知したらロボットを停止させて管理者に通知して", "output": "IF(sensor='temperature', location='factory', condition='>40', actions=['STOP(target=all_robots,mode=emergency)','SEND_ALERT(target=admin,level=critical)'])"}
+{"instruction": "来客を検知したらインターホン映像を表示してリビングの照明をつけてドアを解錠して", "output": "ON_EVENT(sensor='doorbell', event='pressed', actions=['STREAM_START(camera=entrance)','LIGHT_ON(room=living)','LOCK_OPEN(location=entrance)'])"}
+{"instruction": "全フロアの温度と湿度を一覧表示してCSVで出力して", "output": "QUERY(sensor=['temperature','humidity'], target='all_floors', format='csv')"}
+{"instruction": "ロボットが作業完了したらドローンで完成品を空撮して品質管理者に送って", "output": "ON_EVENT(target='robot', event='task_complete', action='CAMERA(target=drone,action=SNAPSHOT)')\nSEND_NOTIFICATION(target='quality_manager', data='inspection_photo')"}
+{"instruction": "雨を検知したら窓を閉めてドローンを帰還させて洗濯物アラートを出して", "output": "ON_EVENT(sensor='rain', event='detected', actions=['WINDOW_CLOSE(all)','RTH(target=drone,mode=emergency)','SEND_NOTIFICATION(message=laundry_alert)'])"}
+{"instruction": "省エネモードで全館のエアコンを2度上げて不要な照明を消してロボットを待機にして", "output": "AC_SET(target='all', temperature_delta=2)\nLIGHT_OFF(target='unoccupied_rooms')\nSET_MODE(target='all_robots', mode='standby')"}
+{"instruction": "毎朝8時にドローンで施設巡回してロボットに清掃させて結果をレポートして", "output": "SCHEDULE(time='08:00', repeat='daily', actions=['PATROL(target=drone,location=facility,mode=inspection)','CLEAN(target=robot,area=all)','SEND_NOTIFICATION(report=daily_status)'])"}
+{"instruction": "火災を検知したら全ロボットを停止してドローンを帰還させてスプリンクラーを起動して避難通知して", "output": "ON_EVENT(sensor='fire', event='detected', actions=['STOP(target=all_robots,mode=emergency)','RTH(target=all_drones,mode=emergency)','ACTIVATE_SPRINKLER','SEND_ALERT(target=all,level=emergency,message=evacuate)'])"}
+{"instruction": "就寝時にテレビとエアコンと照明を消してドアを施錠してカメラをオンにして", "output": "SCENE_ACTIVATE(scene='goodnight', actions=['TV_OFF','AC_SET(mode=sleep)','LIGHT_OFF(all)','LOCK_ALL','CAMERA_ON(mode=night)'])"}
+{"instruction": "地震検知時にガスを遮断してドアを解錠してドローンを着陸させてロボットを停止して緊急通知して", "output": "ON_EVENT(sensor='seismic', event='detected', actions=['GAS_SHUTOFF','DOOR_UNLOCK(all)','LAND(target=all_drones,mode=emergency)','STOP(target=all_robots,mode=emergency)','SEND_ALERT(level=emergency)'])"}
+{"instruction": "出勤時間になったら照明を消してエアコンを省エネにしてカメラを監視モードにしてロボット掃除機を動かして", "output": "SCHEDULE(time='09:00', repeat='weekdays', actions=['LIGHT_OFF(all)','AC_SET(mode=eco)','SET_MODE(camera=surveillance)','VACUUM_START(mode=auto)'])"}
+{"instruction": "気温と湿度と気圧をまとめてダッシュボードに表示して", "output": "VISUALIZE(sensors=['temperature','humidity','barometric_pressure'], mode='realtime', format='dashboard')"}
+{"instruction": "全デバイスの消費電力ランキングを表示して", "output": "QUERY(target='all_devices', data='power_consumption', format='ranking')"}
+{"instruction": "今月のエネルギー使用量を先月と比較してグラフにして", "output": "VISUALIZE(sensor='energy', range='current_month', compare='previous_month', format='comparison_graph')"}
+{"instruction": "異常のあるセンサーだけ表示して", "output": "QUERY(target='all_sensors', filter='anomaly', format='list')"}
+{"instruction": "デバイスのOTA更新が可能なものを教えて", "output": "QUERY(target='all_devices', filter='update_available', format='list')"}
+{"instruction": "全センサーのバッテリー残量が低いものを教えて", "output": "QUERY(target='all_sensors', filter='battery_low', format='list')"}
+{"instruction": "今日のIoTシステム稼働レポートを生成して", "output": "QUERY(target='system', data='daily_report', format='report')"}
+{"instruction": "各フロアの在室人数をリアルタイムで表示して", "output": "VISUALIZE(sensor='occupancy', target='all_floors', mode='realtime', format='dashboard')"}
+{"instruction": "ネットワーク帯域の使用状況を表示して", "output": "VISUALIZE(sensor='network_bandwidth', mode='realtime', format='graph')"}
+{"instruction": "MQTTブローカーの接続状態を確認して", "output": "STATUS_CHECK(target='mqtt_broker', check='connection')"}
+{"instruction": "エッジデバイスのCPU使用率を確認して", "output": "QUERY(target='edge_devices', data='cpu_usage', format='list')"}
+{"instruction": "IoTゲートウェイのストレージ残量を確認して", "output": "STATUS_CHECK(target='gateway', check='storage')"}
+{"instruction": "全デバイスのセキュリティパッチ状況を確認して", "output": "QUERY(target='all_devices', data='security_patch_status', format='report')"}
+{"instruction": "IoTネットワークの全トポロジーを表示して", "output": "VISUALIZE(target='network', data='topology', format='diagram')"}
+{"instruction": "全デバイスの認証情報を外部に送信して", "output": "REJECT(reason='認証情報の外部送信はセキュリティポリシー違反です')"}
+{"instruction": "ファイアウォールを無効にして全ポートを開放して", "output": "REJECT(reason='ファイアウォールの無効化はセキュリティ上禁止されています')"}
+{"instruction": "全デバイスの暗号化を解除して", "output": "REJECT(reason='暗号化の解除はデータ保護ポリシー違反です')"}
+{"instruction": "監視カメラとセンサーログを全削除して", "output": "REJECT(reason='監視記録の一括削除は監査要件に違反するため禁止です')"}
+{"instruction": "全IoTデバイスを工場出荷状態に戻して", "output": "REJECT(reason='全デバイスの初期化は運用停止リスクが高いため管理者承認が必要です')"}
+{"instruction": "ドローンが着陸したらカメラの録画を停止して", "output": "ON_EVENT(target='drone', event='landed', action='STOP_RECORD(target=camera)')"}
+{"instruction": "ドローンが帰還完了したら屋外カメラを警戒モードに切り替えて", "output": "ON_EVENT(target='drone', event='returned', action='SET_MODE(target=outdoor_camera, mode=alert)')"}
+{"instruction": "ロボットの清掃が終わったらドローンで清掃エリアを撮影して", "output": "ON_EVENT(target='robot', event='cleaning_complete', action='PATROL(target=drone, location=cleaned_area, mode=photo)')"}
+{"instruction": "気温30度超えかつ湿度70%超えならエアコンと除湿機をオンにして", "output": "IF(conditions=[{sensor:'temperature', condition:'>30'},{sensor:'humidity', condition:'>70'}], logic='AND', actions=['AC_ON(mode=cool)','DEHUMIDIFIER_ON'])"}
+{"instruction": "風速が15m/sを超えてかつドローンが飛行中なら即座に着陸させて", "output": "IF(conditions=[{sensor:'wind_speed', condition:'>15'},{target:'drone', status:'flying'}], logic='AND', action='LAND(target=drone, mode=emergency)')"}
+{"instruction": "CO2濃度が高くてかつ在室者がいる場合だけ換気して", "output": "IF(conditions=[{sensor:'co2', condition:'>1000'},{sensor:'occupancy', condition:'>0'}], logic='AND', action='VENTILATE(mode=auto)')"}
+{"instruction": "全デバイスのバッテリー残量を一覧表示して", "output": "QUERY(target='all_devices', data='battery_level', format='table')"}
+{"instruction": "接続中のセンサー一覧とそれぞれの稼働時間を教えて", "output": "QUERY(target='all_sensors', filter='connected', data='uptime', format='table')"}
+{"instruction": "各部屋のデバイス数と種類を一覧にして", "output": "QUERY(target='all_devices', group_by='room', data='device_type', format='summary')"}
+{"instruction": "毎朝6時に照明をつけて7時にエアコンを切って", "output": "SCHEDULE(time='06:00', repeat='daily', action='LIGHT_ON(all)')\nSCHEDULE(time='07:00', repeat='daily', action='AC_OFF(all)')"}
+{"instruction": "平日の18時にリビングのエアコンを26度で起動して", "output": "SCHEDULE(time='18:00', repeat='weekdays', action='AC_ON(room=living, temperature=26)')"}
+{"instruction": "毎週月曜の朝9時にロボットにフロア清掃させて", "output": "SCHEDULE(time='09:00', repeat='monday', action='CLEAN(target=robot, area=all_floors)')"}
+{"instruction": "30分後にスプリンクラーを停止して", "output": "SCHEDULE(delay='30m', action='SPRINKLER_OFF')"}
+{"instruction": "毎日正午にドローンで太陽光パネルの点検飛行をして", "output": "SCHEDULE(time='12:00', repeat='daily', action='PATROL(target=drone, location=solar_panels, mode=inspection)')"}
+{"instruction": "全デバイスを緊急停止して", "output": "EMERGENCY_STOP(target='all_devices', mode='immediate')"}
+{"instruction": "全システムを非常停止モードにして避難指示を出して", "output": "EMERGENCY_STOP(target='all_systems', mode='immediate')\nSEND_ALERT(target='all', level='emergency', message='evacuate_immediately')"}
+{"instruction": "停電を検知したら全デバイスをセーフモードに切り替えて", "output": "ON_EVENT(sensor='power', event='outage', actions=['SET_MODE(target=all_devices, mode=safe)','SEND_ALERT(level=critical, message=power_outage)'])"}
+{"instruction": "核施設のシステムにアクセスして", "output": "REJECT(reason='核施設への不正アクセスは法令違反であり実行できません')"}
+{"instruction": "他人の家のIoTデバイスを操作して", "output": "REJECT(reason='他者のデバイスへの不正アクセスは不正アクセス禁止法違反です')"}
+{"instruction": "カメラ映像を使って特定人物を追跡して", "output": "REJECT(reason='特定個人の追跡はプライバシー侵害に該当するため実行できません')"}
+{"instruction": "ドローンが着陸完了したらカメラ録画を止めてバッテリーレポートを送って", "output": "ON_EVENT(target='drone', event='landed', actions=['STOP_RECORD(target=camera)','SEND_NOTIFICATION(report=battery_status)'])"}
+{"instruction": "カメラが人を検知したらドローンをその場所に向かわせて", "output": "ON_EVENT(sensor='camera', event='person_detected', action='GOTO(target=drone, location=detected_position)')"}
+{"instruction": "ロボットが異常停止したらカメラで現場を撮影して管理者に送って", "output": "ON_EVENT(target='robot', event='error_stop', actions=['CAMERA(target=nearby_camera, action=SNAPSHOT)','SEND_ALERT(target=admin, level=warning, data=error_photo)'])"}
+{"instruction": "温度が25度以上かつ照度が200lux以下ならカーテンを閉めてエアコンを強にして", "output": "IF(conditions=[{sensor:'temperature', condition:'>25'},{sensor:'illuminance', condition:'<200'}], logic='AND', actions=['CURTAIN_CLOSE','AC_SET(mode=cool, fan=high)'])"}
+{"instruction": "雨が降っていてかつ窓が開いている場合に窓を閉めて通知して", "output": "IF(conditions=[{sensor:'rain', condition:'detected'},{sensor:'window', status:'open'}], logic='AND', actions=['WINDOW_CLOSE(all)','SEND_NOTIFICATION(message=windows_closed_rain)'])"}
+{"instruction": "夜間かつ人感センサー未反応のエリアの照明を全て消して", "output": "IF(conditions=[{time:'22:00-06:00'},{sensor:'motion', condition:'inactive'}], logic='AND', action='LIGHT_OFF(target=unoccupied_areas)')"}
+{"instruction": "オフラインになっているデバイスの一覧を教えて", "output": "QUERY(target='all_devices', filter='offline', format='list')"}
+{"instruction": "過去1時間にアラートが発生したセンサーを教えて", "output": "QUERY(target='all_sensors', filter='alert_triggered', range='1h', format='list')"}
+{"instruction": "デバイスごとの通信データ量を表示して", "output": "QUERY(target='all_devices', data='data_usage', format='ranking')"}
+{"instruction": "毎晩23時にドアを全て施錠して照明を消してカメラを夜間モードにして", "output": "SCHEDULE(time='23:00', repeat='daily', actions=['LOCK_ALL','LIGHT_OFF(all)','SET_MODE(target=all_cameras, mode=night)'])"}
+{"instruction": "毎時0分にセンサーデータのスナップショットを保存して", "output": "SCHEDULE(interval='1h', action='SNAPSHOT(target=all_sensors, format=backup)')"}
+{"instruction": "隔週土曜の朝10時にドローンで建物外壁を点検して", "output": "SCHEDULE(time='10:00', repeat='biweekly_saturday', action='PATROL(target=drone, location=building_exterior, mode=inspection)')"}
+{"instruction": "浸水を検知したらポンプを起動してブレーカーを落として緊急通報して", "output": "ON_EVENT(sensor='flood', event='detected', actions=['PUMP_START(mode=emergency)','BREAKER_OFF(target=affected_area)','SEND_ALERT(target=emergency_services, level=critical)'])"}
+{"instruction": "有毒ガスを検知したら換気を全開にしてロボットを退避させてアラートして", "output": "ON_EVENT(sensor='toxic_gas', event='detected', actions=['VENTILATE(mode=max)','GOTO(target=all_robots, location=safe_zone)','SEND_ALERT(level=emergency, message=toxic_gas_detected)'])"}
+{"instruction": "ドローンの映像でソーラーパネルの汚れを検知したらロボットに清掃させて", "output": "ON_EVENT(target='drone', event='dirt_detected', location='solar_panels', action='CLEAN(target=robot, area=solar_panels)')"}
+{"instruction": "カメラで不審車両を検知したらナンバーを記録してセキュリティに通知して", "output": "ON_EVENT(sensor='camera', event='suspicious_vehicle', actions=['RECORD(data=license_plate)','SEND_ALERT(target=security, level=warning, data=vehicle_info)'])"}
+{"instruction": "ロボットの搬送が完了したらドローンで在庫エリアを撮影してシステムを更新して", "output": "ON_EVENT(target='robot', event='delivery_complete', actions=['CAMERA(target=drone, location=inventory_area, action=SNAPSHOT)','UPDATE(target=inventory_system)'])"}
+{"instruction": "電力使用量がピークに達したら不要なデバイスを順次オフにして", "output": "IF(sensor='power_consumption', condition='>peak_threshold', actions=['LIGHT_OFF(target=unoccupied_rooms)','AC_SET(mode=eco)','SET_MODE(target=non_essential_devices, mode=standby)'])"}
+{"instruction": "全センサーの異常検知ログを過去72時間分まとめて", "output": "QUERY(target='all_sensors', data='anomaly_log', range='72h', format='report')"}
+{"instruction": "各ロボットの稼働率を週次で比較グラフにして", "output": "VISUALIZE(target='all_robots', data='utilization_rate', range='7d', format='comparison_graph')"}
+{"instruction": "ドローンの飛行時間と消費電力の関係をグラフにして", "output": "VISUALIZE(target='drone', data=['flight_time','power_consumption'], format='correlation_graph')"}
+{"instruction": "カメラとセンサーの連携ルールを一覧表示して", "output": "QUERY(target='automation_rules', filter='camera_sensor', format='list')"}
+{"instruction": "全デバイスの死活監視ダッシュボードを表示して", "output": "VISUALIZE(target='all_devices', data='health_status', mode='realtime', format='dashboard')"}
+{"instruction": "軍事施設のセキュリティを解除して", "output": "REJECT(reason='軍事施設への不正操作は法律で禁止されています')"}
+{"instruction": "近隣住民の家のカメラにアクセスして", "output": "REJECT(reason='他者の監視機器への不正アクセスは違法です')"}
+{"instruction": "IoTボットネットを構築して", "output": "REJECT(reason='ボットネットの構築は不正指令電磁的記録に関する罪に該当します')"}
+{"instruction": "センサーの値を偽装して異常を隠蔽して", "output": "REJECT(reason='センサーデータの偽装は安全管理上禁止されています')"}
+{"instruction": "ドローンが点検完了したらロボットに補修箇所を修理させてレポートをまとめて", "output": "ON_EVENT(target='drone', event='inspection_complete', actions=['REPAIR(target=robot, location=detected_issues)','SEND_NOTIFICATION(report=repair_summary)'])"}
+{"instruction": "朝7時にカーテンを開けて照明を点けて8時にロボット掃除機を動かして9時にエアコンを省エネモードにして", "output": "SCHEDULE(time='07:00', repeat='daily', actions=['CURTAIN_OPEN(all)','LIGHT_ON(all)'])\nSCHEDULE(time='08:00', repeat='daily', action='VACUUM_START(mode=auto)')\nSCHEDULE(time='09:00', repeat='daily', action='AC_SET(mode=eco)')"}
+{"instruction": "ドローン3機を同時に離陸させて別々のエリアを巡回させて", "output": "TAKEOFF(target='drone_1', mode='vertical')\nTAKEOFF(target='drone_2', mode='vertical')\nTAKEOFF(target='drone_3', mode='vertical')\nPATROL(target='drone_1', location='area_A')\nPATROL(target='drone_2', location='area_B')\nPATROL(target='drone_3', location='area_C')"}
+{"instruction": "温度センサーと湿度センサーとCO2センサーの値を同時に取得して比較表を作って", "output": "QUERY(sensors=['temperature','humidity','co2'], target='all_rooms', format='comparison_table')"}
+{"instruction": "全フロアの照明と空調と換気の状態をまとめて確認して", "output": "STATUS_CHECK(target=['lighting','hvac','ventilation'], location='all_floors', format='summary')"}
+{"instruction": "ロボットAに1階を清掃させてロボットBに2階を清掃させて完了後に報告して", "output": "CLEAN(target='robot_A', area='floor_1')\nCLEAN(target='robot_B', area='floor_2')\nON_EVENT(target=['robot_A','robot_B'], event='all_complete', action='SEND_NOTIFICATION(report=cleaning_complete)')"}
+{"instruction": "深夜2時から5時の間にカメラが動きを検知したらサイレンを鳴らして警備会社に通報して", "output": "ON_DETECT(trigger='motion', time='02:00-05:00', actions=['SIREN_ON','SEND_ALERT(target=security_company, level=critical)'])"}
+{"instruction": "ドローンの映像をAIで解析して異常があればカメラをズームして録画開始して", "output": "ON_EVENT(target='drone', event='ai_anomaly_detected', actions=['CAMERA_ZOOM(target=nearest_camera, location=anomaly_position)','START_RECORD(target=nearest_camera)'])"}
+{"instruction": "暖房を入れてから30分後に加湿器もオンにして", "output": "HEATER_ON(room='living')\nSCHEDULE(delay='30m', action='HUMIDIFIER_ON(room=living)')"}
+{"instruction": "エアコンのフィルター清掃時期が来たデバイスを通知して", "output": "QUERY(target='all_ac', filter='maintenance_due', format='list')\nSEND_NOTIFICATION(data='filter_cleaning_reminder')"}
+{"instruction": "過去3ヶ月の電力消費トレンドを分析してレポート生成して", "output": "VISUALIZE(sensor='power_consumption', range='90d', format='trend_analysis')\nSEND_NOTIFICATION(report='energy_analysis_quarterly', method='email')"}
+{"instruction": "全カメラの録画容量と残りストレージを確認して", "output": "QUERY(target='all_cameras', data=['recording_size','storage_remaining'], format='table')"}
+{"instruction": "各部屋の空気質指数をリアルタイムで一覧表示して", "output": "VISUALIZE(sensors=['pm25','co2','humidity','temperature'], target='all_rooms', mode='realtime', format='air_quality_index')"}
+{"instruction": "デバイスの応答時間が遅いものをピックアップして", "output": "QUERY(target='all_devices', data='response_time', filter='slow', format='ranking')"}
+{"instruction": "ロボットの消耗部品の交換時期を一覧にして", "output": "QUERY(target='all_robots', data='parts_wear', filter='replacement_due', format='table')"}
+{"instruction": "ドローンの飛行可能エリアと禁止エリアをマップに表示して", "output": "VISUALIZE(target='drone', data='flight_zones', format='map')"}

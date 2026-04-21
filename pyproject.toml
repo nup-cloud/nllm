@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nllm"
+version = "0.2.0"
+description = "Local-first Japanese control runtime for robots, drones, and edge devices"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+authors = [{ name = "nupwhite" }]
+keywords = ["llm", "iot", "control", "drone", "robot", "offline", "japanese", "edge"]
+dependencies = ["pyyaml>=6.0"]
+
+[project.optional-dependencies]
+llm = ["llama-cpp-python>=0.2.0"]
+mqtt = ["paho-mqtt>=1.6.0"]
+gui = ["gradio>=4.0.0"]
+finetune = [
+  "torch>=2.0.0", "transformers>=4.36.0", "peft>=0.7.0",
+  "datasets>=2.14.0", "bitsandbytes>=0.41.0", "accelerate>=0.24.0", "trl>=0.7.0",
+]
+dev = ["pytest>=8.0.0"]
+all = ["nllm[llm,mqtt,gui,dev]"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"
+testpaths = ["tests"]

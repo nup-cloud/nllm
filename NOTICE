@@ -1,0 +1,12 @@
+nllm
+Copyright (c) 2026 nupwhite
+
+This product is a control runtime. It does not include model weights.
+When used with Llama-based models, the following applies:
+
+  Built with Llama.
+  Meta Llama 3.1 — Copyright (c) Meta Platforms, Inc.
+  https://llama.meta.com/llama3_1/license/
+
+Swallow models are developed by Institute of Science Tokyo and AIST.
+  https://swallow-llm.github.io/

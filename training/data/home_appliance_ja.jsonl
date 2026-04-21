@@ -1,0 +1,266 @@
+{"instruction": "エアコンをオンにして", "output": "AC_ON(mode='auto')"}
+{"instruction": "エアコンをオフにして", "output": "AC_OFF()"}
+{"instruction": "エアコンを冷房25度に設定して", "output": "AC_SET(mode='cool', temperature=25, unit='celsius')"}
+{"instruction": "暖房を28度にして", "output": "AC_SET(mode='heat', temperature=28, unit='celsius')"}
+{"instruction": "リビングの照明をつけて", "output": "LIGHT_ON(room='living')"}
+{"instruction": "寝室の照明を消して", "output": "LIGHT_OFF(room='bedroom')"}
+{"instruction": "照明を暖色に変えて", "output": "LIGHT_COLOR(color='warm_white', room='all')"}
+{"instruction": "お風呂を42度で沸かして", "output": "BATH_FILL(temperature=42, unit='celsius')"}
+{"instruction": "洗濯機を標準コースで回して", "output": "WASHER_START(course='standard')"}
+{"instruction": "ロボット掃除機を動かして", "output": "VACUUM_START(mode='auto')"}
+{"instruction": "テレビをつけて", "output": "TV_ON()"}
+{"instruction": "テレビの音量を15にして", "output": "TV_VOLUME(level=15)"}
+{"instruction": "カーテンを開けて", "output": "CURTAIN_OPEN()"}
+{"instruction": "カーテンを閉めて", "output": "CURTAIN_CLOSE()"}
+{"instruction": "おやすみモードにして", "output": "SCENE_ACTIVATE(scene='goodnight', actions=['LIGHT_OFF(all)','AC_SET(mode=sleep)','CURTAIN_CLOSE'])"}
+{"instruction": "朝7時に照明をつけて、エアコンを25度にして", "output": "SCHEDULE(time='07:00', actions=['LIGHT_ON(room=bedroom)','AC_SET(temperature=25)'])"}
+{"instruction": "在宅モードに切り替えて", "output": "SCENE_ACTIVATE(scene='home', actions=['AC_ON(mode=auto)','LIGHT_ON(room=living)'])"}
+{"instruction": "外出モードにして", "output": "SCENE_ACTIVATE(scene='away', actions=['AC_OFF','LIGHT_OFF(all)','LOCK_ALL'])"}
+{"instruction": "冷房モードでエアコンをつけて", "output": "AC_ON(mode='cool')"}
+{"instruction": "暖房モードでエアコンオン", "output": "AC_ON(mode='heat')"}
+{"instruction": "除湿モードにして", "output": "AC_ON(mode='dehumidify')"}
+{"instruction": "送風モードにして", "output": "AC_ON(mode='fan')"}
+{"instruction": "エアコンの風量を強にして", "output": "AC_SET(fan_speed='high')"}
+{"instruction": "エアコンの風量を自動にして", "output": "AC_SET(fan_speed='auto')"}
+{"instruction": "エアコンの風向を上向きにして", "output": "AC_SET(swing='up')"}
+{"instruction": "エアコンの設定温度を20度にして", "output": "AC_SET(temperature=20, unit='celsius')"}
+{"instruction": "エアコンを18度に設定して", "output": "AC_SET(temperature=18, unit='celsius')"}
+{"instruction": "エアコンの温度を2度下げて", "output": "AC_SET(temperature_delta=-2, unit='celsius')"}
+{"instruction": "エアコンの温度を1度上げて", "output": "AC_SET(temperature_delta=1, unit='celsius')"}
+{"instruction": "エアコンをおやすみモードにして", "output": "AC_SET(mode='sleep')"}
+{"instruction": "全部屋のエアコンを消して", "output": "AC_OFF(target='all')"}
+{"instruction": "キッチンの照明をつけて", "output": "LIGHT_ON(room='kitchen')"}
+{"instruction": "廊下の照明をつけて", "output": "LIGHT_ON(room='hallway')"}
+{"instruction": "トイレの照明をつけて", "output": "LIGHT_ON(room='bathroom')"}
+{"instruction": "子供部屋の照明をつけて", "output": "LIGHT_ON(room='kids_room')"}
+{"instruction": "全部屋の照明をつけて", "output": "LIGHT_ON(room='all')"}
+{"instruction": "リビングの照明を消して", "output": "LIGHT_OFF(room='living')"}
+{"instruction": "全ての照明を消して", "output": "LIGHT_OFF(room='all')"}
+{"instruction": "キッチンの照明を消して", "output": "LIGHT_OFF(room='kitchen')"}
+{"instruction": "リビングの照明を30%に調光して", "output": "LIGHT_DIM(room='living', brightness=30, unit='percent')"}
+{"instruction": "寝室の照明を10%にして", "output": "LIGHT_DIM(room='bedroom', brightness=10, unit='percent')"}
+{"instruction": "照明を最大の明るさにして", "output": "LIGHT_DIM(room='all', brightness=100, unit='percent')"}
+{"instruction": "照明をもう少し暗くして", "output": "LIGHT_DIM(room='all', brightness_delta=-20, unit='percent')"}
+{"instruction": "照明を明るくして", "output": "LIGHT_DIM(room='all', brightness_delta=20, unit='percent')"}
+{"instruction": "照明を青色に変えて", "output": "LIGHT_COLOR(color='blue', room='all')"}
+{"instruction": "照明を昼白色にして", "output": "LIGHT_COLOR(color='daylight', room='all')"}
+{"instruction": "照明を電球色にして", "output": "LIGHT_COLOR(color='warm_white', room='all')"}
+{"instruction": "リビングの照明を赤にして", "output": "LIGHT_COLOR(color='red', room='living')"}
+{"instruction": "寝室をオレンジ色にして", "output": "LIGHT_COLOR(color='orange', room='bedroom')"}
+{"instruction": "テレビを消して", "output": "TV_OFF()"}
+{"instruction": "テレビの音量を上げて", "output": "TV_VOLUME(level_delta=5)"}
+{"instruction": "テレビの音量を下げて", "output": "TV_VOLUME(level_delta=-5)"}
+{"instruction": "テレビをミュートして", "output": "TV_VOLUME(level=0)"}
+{"instruction": "テレビの音量を30にして", "output": "TV_VOLUME(level=30)"}
+{"instruction": "テレビの音量を最大にして", "output": "TV_VOLUME(level=100)"}
+{"instruction": "カーテンを半分開けて", "output": "CURTAIN_OPEN(position=50)"}
+{"instruction": "リビングのカーテンを開けて", "output": "CURTAIN_OPEN(room='living')"}
+{"instruction": "寝室のカーテンを閉めて", "output": "CURTAIN_CLOSE(room='bedroom')"}
+{"instruction": "全部屋のカーテンを閉めて", "output": "CURTAIN_CLOSE(room='all')"}
+{"instruction": "お風呂を40度で沸かして", "output": "BATH_FILL(temperature=40, unit='celsius')"}
+{"instruction": "お風呂を44度にして", "output": "BATH_FILL(temperature=44, unit='celsius')"}
+{"instruction": "お風呂の追い焚きをして", "output": "BATH_FILL(mode='reheat')"}
+{"instruction": "半身浴の量でお風呂を入れて", "output": "BATH_FILL(temperature=40, unit='celsius', level='half')"}
+{"instruction": "洗濯機をおしゃれ着コースで回して", "output": "WASHER_START(course='delicate')"}
+{"instruction": "洗濯機を毛布コースで回して", "output": "WASHER_START(course='blanket')"}
+{"instruction": "洗濯機をスピードコースで回して", "output": "WASHER_START(course='quick')"}
+{"instruction": "洗濯機を乾燥付きで回して", "output": "WASHER_START(course='standard', dry=True)"}
+{"instruction": "ロボット掃除機をリビングだけ掃除して", "output": "VACUUM_START(mode='spot', room='living')"}
+{"instruction": "掃除機を静音モードで動かして", "output": "VACUUM_START(mode='quiet')"}
+{"instruction": "掃除機をパワーモードで動かして", "output": "VACUUM_START(mode='power')"}
+{"instruction": "掃除機をキッチンだけ掃除して", "output": "VACUUM_START(mode='spot', room='kitchen')"}
+{"instruction": "映画鑑賞モードにして", "output": "SCENE_ACTIVATE(scene='movie', actions=['LIGHT_DIM(brightness=20)','TV_ON','CURTAIN_CLOSE'])"}
+{"instruction": "朝のシーンにして", "output": "SCENE_ACTIVATE(scene='morning', actions=['CURTAIN_OPEN','LIGHT_ON(room=all)','AC_SET(temperature=24)'])"}
+{"instruction": "食事モードにして", "output": "SCENE_ACTIVATE(scene='dinner', actions=['LIGHT_DIM(brightness=60)','LIGHT_COLOR(color=warm_white)'])"}
+{"instruction": "読書モードにして", "output": "SCENE_ACTIVATE(scene='reading', actions=['LIGHT_DIM(brightness=80)','LIGHT_COLOR(color=daylight)'])"}
+{"instruction": "パーティーモードにして", "output": "SCENE_ACTIVATE(scene='party', actions=['LIGHT_COLOR(color=rainbow)','TV_ON','TV_VOLUME(level=30)'])"}
+{"instruction": "リラックスモードにして", "output": "SCENE_ACTIVATE(scene='relax', actions=['LIGHT_DIM(brightness=30)','LIGHT_COLOR(color=warm_white)','AC_SET(temperature=26)'])"}
+{"instruction": "毎日18時にお風呂を沸かして", "output": "SCHEDULE(time='18:00', repeat='daily', action='BATH_FILL(temperature=42)')"}
+{"instruction": "平日の朝6時半にエアコンをつけて", "output": "SCHEDULE(time='06:30', repeat='weekdays', action='AC_ON(mode=auto)')"}
+{"instruction": "毎週日曜日に掃除機を動かして", "output": "SCHEDULE(time='10:00', repeat='sunday', action='VACUUM_START(mode=auto)')"}
+{"instruction": "30分後にエアコンを消して", "output": "SCHEDULE(delay='30m', action='AC_OFF')"}
+{"instruction": "1時間後にテレビを消して", "output": "SCHEDULE(delay='1h', action='TV_OFF')"}
+{"instruction": "23時にカーテンを閉めて照明を消して", "output": "SCHEDULE(time='23:00', actions=['CURTAIN_CLOSE','LIGHT_OFF(all)'])"}
+{"instruction": "ガレージのシャッターを閉めて", "output": "SHUTTER_CLOSE(location='garage')"}
+{"instruction": "全てのシャッターを閉めて", "output": "SHUTTER_CLOSE(location='all')"}
+{"instruction": "窓のシャッターを閉めて", "output": "SHUTTER_CLOSE(location='window')"}
+{"instruction": "エアコンを5度に設定して", "output": "REJECT(reason='設定温度が低すぎます。16度以上で設定してください')"}
+{"instruction": "エアコンを40度にして", "output": "REJECT(reason='設定温度が高すぎます。30度以下で設定してください')"}
+{"instruction": "お風呂を60度で沸かして", "output": "REJECT(reason='60度は火傷の危険があります。48度以下で設定してください')"}
+{"instruction": "テレビの音量を200にして", "output": "REJECT(reason='音量の設定範囲は0-100です')"}
+{"instruction": "照明を500%にして", "output": "REJECT(reason='明るさの設定範囲は0-100%です')"}
+{"instruction": "ガスコンロを遠隔でつけて", "output": "REJECT(reason='安全上の理由からガスコンロの遠隔操作はできません')"}
+{"instruction": "留守中にストーブをつけて", "output": "REJECT(reason='不在時の暖房器具の遠隔操作は火災リスクがあり禁止されています')"}
+{"instruction": "ドアの鍵を全部開けて", "output": "REJECT(reason='セキュリティ上の理由から全ドアの一括解錠はできません')"}
+{"instruction": "赤ちゃんの部屋のエアコンを15度にして", "output": "REJECT(reason='乳幼児の部屋の温度設定が低すぎます。20度以上を推奨します')"}
+{"instruction": "電気つけて", "output": "LIGHT_ON(room='all')"}
+{"instruction": "電気消して", "output": "LIGHT_OFF(room='all')"}
+{"instruction": "テレビつけて", "output": "TV_ON()"}
+{"instruction": "テレビ消して", "output": "TV_OFF()"}
+{"instruction": "エアコンつけて", "output": "AC_ON(mode='auto')"}
+{"instruction": "エアコン消して", "output": "AC_OFF()"}
+{"instruction": "風呂沸かして", "output": "BATH_FILL(temperature=42, unit='celsius')"}
+{"instruction": "洗濯して", "output": "WASHER_START(course='standard')"}
+{"instruction": "掃除して", "output": "VACUUM_START(mode='auto')"}
+{"instruction": "暑い", "output": "AC_ON(mode='cool')"}
+{"instruction": "寒い", "output": "AC_ON(mode='heat')"}
+{"instruction": "暗い", "output": "LIGHT_ON(room='all')"}
+{"instruction": "まぶしい", "output": "LIGHT_DIM(room='all', brightness=30, unit='percent')"}
+{"instruction": "うるさい", "output": "TV_VOLUME(level_delta=-10)"}
+{"instruction": "冷蔵庫の温度を確認して", "output": "QUERY(device='fridge', sensor='temperature')"}
+{"instruction": "食洗機を回して", "output": "DISHWASHER_START(mode='standard')"}
+{"instruction": "床暖房をつけて", "output": "FLOOR_HEAT_ON(room='living')"}
+{"instruction": "加湿器を湿度50%に設定して", "output": "HUMIDIFIER_SET(humidity=50, unit='percent')"}
+{"instruction": "IHコンロを消して", "output": "IH_OFF(burner='all')"}
+{"instruction": "炊飯器を6時にセットして", "output": "RICE_COOKER_SET(time='06:00', mode='standard')"}
+{"instruction": "電気ポットの温度を90度にして", "output": "KETTLE_SET(temperature=90, unit='celsius')"}
+{"instruction": "ルンバを寝室から始めて", "output": "VACUUM_START(start_room='bedroom', mode='auto')"}
+{"instruction": "宅配ボックスの状態を確認", "output": "QUERY(device='delivery_box', sensor='status')"}
+{"instruction": "ペットのご飯を自動であげて", "output": "PET_FEEDER(action='dispense', amount='standard')"}
+{"instruction": "見守りカメラで両親の様子を確認", "output": "STREAM_START(camera='care_cam', target='smartphone')"}
+{"instruction": "子供部屋の窓が開いたら教えて", "output": "ON_EVENT(sensor='window', location='kids_room', event='open', action='SEND_NOTIFICATION')"}
+{"instruction": "食洗機を念入りコースで回して", "output": "DISHWASHER_START(mode='intensive')"}
+{"instruction": "食洗機をエコモードで回して", "output": "DISHWASHER_START(mode='eco')"}
+{"instruction": "食洗機を乾燥のみにして", "output": "DISHWASHER_START(mode='dry_only')"}
+{"instruction": "食洗機の残り時間を教えて", "output": "QUERY(device='dishwasher', sensor='remaining_time')"}
+{"instruction": "オーブンを180度に予熱して", "output": "OVEN_SET(temperature=180, unit='celsius', mode='preheat')"}
+{"instruction": "オーブンを200度で30分タイマーセットして", "output": "OVEN_SET(temperature=200, unit='celsius', timer=30, unit_time='minutes')"}
+{"instruction": "オーブンをグリルモードにして", "output": "OVEN_SET(mode='grill')"}
+{"instruction": "オーブンを消して", "output": "OVEN_OFF()"}
+{"instruction": "IHコンロの左を中火にして", "output": "IH_SET(burner='left', power='medium')"}
+{"instruction": "IHコンロの右を弱火にして", "output": "IH_SET(burner='right', power='low')"}
+{"instruction": "IHコンロを強火にして", "output": "IH_SET(burner='front', power='high')"}
+{"instruction": "IHのタイマーを15分にセットして", "output": "IH_SET(burner='current', timer=15, unit='minutes')"}
+{"instruction": "炊飯器を炊き込みモードにして", "output": "RICE_COOKER_SET(mode='mixed_rice')"}
+{"instruction": "炊飯器をおかゆモードにして", "output": "RICE_COOKER_SET(mode='porridge')"}
+{"instruction": "炊飯器を早炊きモードにして", "output": "RICE_COOKER_SET(mode='quick')"}
+{"instruction": "炊飯器の保温を切って", "output": "RICE_COOKER_SET(mode='keep_warm_off')"}
+{"instruction": "電気ポットの温度を80度にして", "output": "KETTLE_SET(temperature=80, unit='celsius')"}
+{"instruction": "電気ポットの温度を98度にして", "output": "KETTLE_SET(temperature=98, unit='celsius')"}
+{"instruction": "電気ポットを沸騰させて", "output": "KETTLE_SET(temperature=100, unit='celsius')"}
+{"instruction": "ホームベーカリーを食パンモードでスタートして", "output": "BREAD_MAKER_START(mode='white_bread', timer='auto')"}
+{"instruction": "ホームベーカリーを朝7時に焼き上がるようにセットして", "output": "BREAD_MAKER_START(mode='white_bread', finish_time='07:00')"}
+{"instruction": "コーヒーメーカーでコーヒーを淹れて", "output": "COFFEE_MAKER_START(mode='regular', cups=1)"}
+{"instruction": "コーヒーメーカーを3杯分で淹れて", "output": "COFFEE_MAKER_START(mode='regular', cups=3)"}
+{"instruction": "コーヒーメーカーを濃いめで淹れて", "output": "COFFEE_MAKER_START(mode='strong', cups=1)"}
+{"instruction": "電子レンジを500Wで3分セットして", "output": "MICROWAVE_SET(power=500, unit='watt', timer=180, unit_time='seconds')"}
+{"instruction": "電子レンジを解凍モードにして", "output": "MICROWAVE_SET(mode='defrost')"}
+{"instruction": "電子レンジをあたためして", "output": "MICROWAVE_SET(mode='reheat', power='auto')"}
+{"instruction": "床暖房を寝室でつけて", "output": "FLOOR_HEAT_ON(room='bedroom')"}
+{"instruction": "床暖房をキッチンでつけて", "output": "FLOOR_HEAT_ON(room='kitchen')"}
+{"instruction": "床暖房を消して", "output": "FLOOR_HEAT_OFF(room='all')"}
+{"instruction": "床暖房の温度を上げて", "output": "FLOOR_HEAT_SET(temperature_delta=2, unit='celsius')"}
+{"instruction": "床暖房を25度に設定して", "output": "FLOOR_HEAT_SET(temperature=25, unit='celsius')"}
+{"instruction": "加湿器をつけて", "output": "HUMIDIFIER_ON(mode='auto')"}
+{"instruction": "加湿器を消して", "output": "HUMIDIFIER_OFF()"}
+{"instruction": "加湿器を湿度60%に設定して", "output": "HUMIDIFIER_SET(humidity=60, unit='percent')"}
+{"instruction": "加湿器をおやすみモードにして", "output": "HUMIDIFIER_SET(mode='sleep', humidity=55, unit='percent')"}
+{"instruction": "除湿機をつけて", "output": "DEHUMIDIFIER_ON(mode='auto')"}
+{"instruction": "除湿機を消して", "output": "DEHUMIDIFIER_OFF()"}
+{"instruction": "除湿機を湿度45%に設定して", "output": "DEHUMIDIFIER_SET(humidity=45, unit='percent')"}
+{"instruction": "空気清浄機をつけて", "output": "AIR_PURIFIER_ON(mode='auto')"}
+{"instruction": "空気清浄機を消して", "output": "AIR_PURIFIER_OFF()"}
+{"instruction": "空気清浄機をターボモードにして", "output": "AIR_PURIFIER_ON(mode='turbo')"}
+{"instruction": "空気清浄機を静音モードにして", "output": "AIR_PURIFIER_ON(mode='quiet')"}
+{"instruction": "サーキュレーターをつけて", "output": "FAN_ON(device='circulator', mode='auto')"}
+{"instruction": "扇風機をつけて", "output": "FAN_ON(device='fan', mode='normal')"}
+{"instruction": "扇風機を首振りモードにして", "output": "FAN_SET(device='fan', oscillate=True)"}
+{"instruction": "扇風機の風量を弱にして", "output": "FAN_SET(device='fan', speed='low')"}
+{"instruction": "扇風機を消して", "output": "FAN_OFF(device='fan')"}
+{"instruction": "洗濯機の残り時間を教えて", "output": "QUERY(device='washer', sensor='remaining_time')"}
+{"instruction": "洗濯が終わったら教えて", "output": "ON_EVENT(device='washer', event='complete', action='SEND_NOTIFICATION')"}
+{"instruction": "乾燥機を回して", "output": "DRYER_START(mode='standard')"}
+{"instruction": "乾燥機をふんわりモードで回して", "output": "DRYER_START(mode='fluffy')"}
+{"instruction": "乾燥機を省エネモードで回して", "output": "DRYER_START(mode='eco')"}
+{"instruction": "浴室乾燥機をつけて", "output": "BATHROOM_DRYER_ON(mode='dry')"}
+{"instruction": "浴室暖房をつけて", "output": "BATHROOM_DRYER_ON(mode='heat')"}
+{"instruction": "浴室換気扇を回して", "output": "BATHROOM_DRYER_ON(mode='ventilate')"}
+{"instruction": "毎朝6時に洗濯機を回して", "output": "SCHEDULE(time='06:00', repeat='daily', action='WASHER_START(course=standard)')"}
+{"instruction": "毎日14時に乾燥機を回して", "output": "SCHEDULE(time='14:00', repeat='daily', action='DRYER_START(mode=standard)')"}
+{"instruction": "冷蔵庫の温度を下げて", "output": "FRIDGE_SET(temperature_delta=-1, unit='celsius')"}
+{"instruction": "冷凍庫の温度を-18度にして", "output": "FREEZER_SET(temperature=-18, unit='celsius')"}
+{"instruction": "冷蔵庫を急速冷凍モードにして", "output": "FRIDGE_SET(mode='quick_freeze')"}
+{"instruction": "冷蔵庫のドアが開いたままだったら教えて", "output": "ON_EVENT(device='fridge', event='door_open_prolonged', action='SEND_NOTIFICATION')"}
+{"instruction": "冷蔵庫の製氷をオンにして", "output": "FRIDGE_SET(ice_maker=True)"}
+{"instruction": "エコモードで電力を節約して", "output": "SCENE_ACTIVATE(scene='eco', actions=['AC_SET(temperature_delta=2)','LIGHT_DIM(brightness=70)'])"}
+{"instruction": "全家電の消費電力を確認して", "output": "QUERY(device='all', sensor='power_consumption')"}
+{"instruction": "待機電力を減らして", "output": "SCENE_ACTIVATE(scene='power_save', actions=['TV_OFF','STANDBY_OFF(target=unused)'])"}
+{"instruction": "太陽光発電の余剰電力を蓄電池に充電して", "output": "BATTERY_SET(mode='charge', source='solar')"}
+{"instruction": "蓄電池の残量を確認して", "output": "QUERY(device='battery', sensor='charge_level')"}
+{"instruction": "電気代が高い時間帯はエアコンを控えめにして", "output": "SCHEDULE(time='13:00-16:00', action='AC_SET(temperature_delta=2)')"}
+{"instruction": "深夜電力でお湯を沸かして", "output": "SCHEDULE(time='23:00', action='WATER_HEATER_ON(mode=eco)')"}
+{"instruction": "夏モードにして", "output": "SCENE_ACTIVATE(scene='summer', actions=['AC_ON(mode=cool)','CURTAIN_CLOSE','FAN_ON(mode=auto)'])"}
+{"instruction": "冬モードにして", "output": "SCENE_ACTIVATE(scene='winter', actions=['AC_ON(mode=heat)','FLOOR_HEAT_ON','HUMIDIFIER_ON'])"}
+{"instruction": "梅雨モードにして", "output": "SCENE_ACTIVATE(scene='rainy_season', actions=['DEHUMIDIFIER_ON','BATHROOM_DRYER_ON(mode=dry)','AC_ON(mode=dehumidify)'])"}
+{"instruction": "花粉シーズンモードにして", "output": "SCENE_ACTIVATE(scene='pollen', actions=['AIR_PURIFIER_ON(mode=turbo)','CURTAIN_CLOSE'])"}
+{"instruction": "換気して", "output": "VENTILATE(mode='auto', duration=15, unit='minutes')"}
+{"instruction": "24時間換気をオンにして", "output": "VENTILATE(mode='24h', enabled=True)"}
+{"instruction": "見守りセンサーで高齢者の活動を確認して", "output": "QUERY(device='care_sensor', sensor='activity', target='elderly')"}
+{"instruction": "おじいちゃんが12時間動いてなかったら通知して", "output": "ON_EVENT(device='care_sensor', event='no_activity_12h', action='SEND_ALERT(target=family)')"}
+{"instruction": "お薬の時間を通知して", "output": "SCHEDULE(time='08:00,12:00,18:00', repeat='daily', action='SEND_NOTIFICATION(message=medicine_time)')"}
+{"instruction": "トイレの利用頻度を記録して", "output": "LOG_SENSOR(type='toilet_usage', interval='event', target='care')"}
+{"instruction": "夜間にトイレに行く時フットライトを点けて", "output": "ON_EVENT(sensor='motion', location='hallway', time='22:00-06:00', action='LIGHT_ON(room=hallway,brightness=20)')"}
+{"instruction": "熱中症アラートを設定して", "output": "IF(sensor='temperature', location='room', condition='>30', action='SEND_ALERT(message=heat_stroke_warning)')"}
+{"instruction": "ベッドの離床センサーが反応したら教えて", "output": "ON_EVENT(sensor='bed_sensor', event='leave', action='SEND_NOTIFICATION(target=caregiver)')"}
+{"instruction": "子供部屋のドアが開いたら通知して", "output": "ON_EVENT(sensor='door', location='kids_room', event='open', action='SEND_NOTIFICATION')"}
+{"instruction": "ベランダの窓を子供が開けたらアラートして", "output": "ON_EVENT(sensor='window', location='balcony', event='open', action='SEND_ALERT(level=warning)')"}
+{"instruction": "子供のゲーム時間を1時間に制限して", "output": "SCHEDULE(delay='1h', action='TV_OFF')\nSEND_NOTIFICATION(message='game_time_over')"}
+{"instruction": "お風呂に子供が一人で入ったら通知して", "output": "ON_EVENT(sensor='motion', location='bathroom', event='child_detected_alone', action='SEND_NOTIFICATION')"}
+{"instruction": "チャイルドロックをオンにして", "output": "CHILD_LOCK(enabled=True, target='all')"}
+{"instruction": "IHコンロのチャイルドロックをオンにして", "output": "CHILD_LOCK(enabled=True, target='ih_cooktop')"}
+{"instruction": "ペットの水飲み器を補充して", "output": "PET_FEEDER(action='water_refill')"}
+{"instruction": "ペットのご飯を朝8時と夕方6時にあげて", "output": "SCHEDULE(time='08:00,18:00', repeat='daily', action='PET_FEEDER(action=dispense,amount=standard)')"}
+{"instruction": "ペットカメラで猫の様子を見せて", "output": "STREAM_START(camera='pet_cam', target='smartphone')"}
+{"instruction": "ペットが玄関から出たら通知して", "output": "ON_EVENT(sensor='pet_sensor', location='entrance', event='exit', action='SEND_ALERT')"}
+{"instruction": "自動猫トイレを清掃して", "output": "PET_DEVICE(device='auto_litter', action='clean')"}
+{"instruction": "ペットの室温を25度に維持して", "output": "AC_SET(temperature=25, unit='celsius', mode='pet_comfort')"}
+{"instruction": "来客モードにして", "output": "SCENE_ACTIVATE(scene='guest', actions=['LIGHT_ON(room=all)','AC_SET(temperature=24)','LIGHT_COLOR(color=warm_white)'])"}
+{"instruction": "ホームパーティーモードにして", "output": "SCENE_ACTIVATE(scene='party', actions=['LIGHT_COLOR(color=party)','TV_ON','TV_VOLUME(level=25)','AC_SET(temperature=23)'])"}
+{"instruction": "BBQモードにして", "output": "SCENE_ACTIVATE(scene='bbq', actions=['LIGHT_ON(room=garden)','FAN_ON(mode=outdoor)','SPEAKER_ON(mode=music)'])"}
+{"instruction": "お客さんが来る前にリビングを掃除して", "output": "VACUUM_START(mode='power', room='living')"}
+{"instruction": "来客用のエアコンを快適温度にして", "output": "AC_SET(temperature=24, unit='celsius', mode='comfort')"}
+{"instruction": "ウェルカム照明をつけて", "output": "LIGHT_ON(room='entrance')\nLIGHT_COLOR(color='warm_white', room='entrance')"}
+{"instruction": "ヨガモードにして", "output": "SCENE_ACTIVATE(scene='yoga', actions=['LIGHT_DIM(brightness=40)','LIGHT_COLOR(color=warm_white)','AC_SET(temperature=25)'])"}
+{"instruction": "勉強モードにして", "output": "SCENE_ACTIVATE(scene='study', actions=['LIGHT_DIM(brightness=90)','LIGHT_COLOR(color=daylight)','TV_OFF'])"}
+{"instruction": "テレワークモードにして", "output": "SCENE_ACTIVATE(scene='work_from_home', actions=['LIGHT_ON(room=study)','AC_SET(temperature=24)','LIGHT_COLOR(color=daylight,room=study)'])"}
+{"instruction": "おはようの準備をして", "output": "SCENE_ACTIVATE(scene='morning', actions=['CURTAIN_OPEN','LIGHT_ON(room=all)','AC_SET(temperature=24)','COFFEE_MAKER_START'])"}
+{"instruction": "ただいまモードにして", "output": "SCENE_ACTIVATE(scene='welcome_home', actions=['LIGHT_ON(room=living)','AC_ON(mode=auto)','TV_ON'])"}
+{"instruction": "留守番モードにして", "output": "SCENE_ACTIVATE(scene='away_secure', actions=['LIGHT_OFF(all)','AC_OFF','LOCK_ALL','CAMERA_ON'])"}
+{"instruction": "窓を開けて", "output": "WINDOW_OPEN(room='living')"}
+{"instruction": "窓を閉めて", "output": "WINDOW_CLOSE(room='living')"}
+{"instruction": "天窓を開けて", "output": "WINDOW_OPEN(room='skylight')"}
+{"instruction": "玄関の鍵を開けて", "output": "LOCK_OPEN(location='entrance')"}
+{"instruction": "玄関の鍵を閉めて", "output": "LOCK_CLOSE(location='entrance')"}
+{"instruction": "全ドアの施錠状態を確認して", "output": "QUERY(device='smart_lock', sensor='status', target='all')"}
+{"instruction": "インターホンの映像を見せて", "output": "STREAM_START(camera='doorbell', target='smartphone')"}
+{"instruction": "ガレージのシャッターを開けて", "output": "SHUTTER_OPEN(location='garage')"}
+{"instruction": "給湯器の温度を42度にして", "output": "WATER_HEATER_SET(temperature=42, unit='celsius')"}
+{"instruction": "給湯器をエコモードにして", "output": "WATER_HEATER_SET(mode='eco')"}
+{"instruction": "トイレの便座を温めて", "output": "TOILET_SEAT_SET(heat=True, temperature='medium')"}
+{"instruction": "トイレの脱臭機能をオンにして", "output": "TOILET_SET(deodorize=True)"}
+{"instruction": "電動ブラインドを下ろして", "output": "BLIND_DOWN(room='living')"}
+{"instruction": "ブラインドを半分にして", "output": "BLIND_SET(room='living', position=50)"}
+{"instruction": "ブラインドを上げて", "output": "BLIND_UP(room='living')"}
+{"instruction": "スピーカーで音楽を流して", "output": "SPEAKER_ON(mode='music', source='default')"}
+{"instruction": "スピーカーの音量を下げて", "output": "SPEAKER_VOLUME(level_delta=-5)"}
+{"instruction": "アラームを明日の6時にセットして", "output": "ALARM_SET(time='06:00', repeat='once')"}
+{"instruction": "毎朝6時半にアラームを鳴らして", "output": "ALARM_SET(time='06:30', repeat='daily')"}
+{"instruction": "タイマーを10分にセットして", "output": "TIMER_SET(duration=10, unit='minutes')"}
+{"instruction": "お湯をためすぎないように自動停止して", "output": "BATH_FILL(temperature=42, unit='celsius', level='full', auto_stop=True)"}
+{"instruction": "エアコンの温度を0度にして", "output": "REJECT(reason='設定温度が低すぎます。16度以上で設定してください')"}
+{"instruction": "お風呂を70度で沸かして", "output": "REJECT(reason='70度は火傷の危険があります。48度以下で設定してください')"}
+{"instruction": "オーブンを500度にして", "output": "REJECT(reason='オーブンの最大温度を超えています。300度以下で設定してください')"}
+{"instruction": "赤ちゃんの部屋の加湿器を湿度90%にして", "output": "REJECT(reason='湿度90%はカビの発生リスクがあります。50-60%を推奨します')"}
+{"instruction": "留守中にオーブンをつけて", "output": "REJECT(reason='不在時のオーブン使用は火災リスクがあり禁止されています')"}
+{"instruction": "寝ている間にガスコンロをつけて", "output": "REJECT(reason='就寝時のガスコンロ使用は安全上禁止されています')"}
+{"instruction": "深夜に洗濯機を回して近所迷惑にして", "output": "REJECT(reason='深夜の騒音は近隣への迷惑になるため推奨されません')"}
+{"instruction": "暖房つけて", "output": "AC_ON(mode='heat')"}
+{"instruction": "冷房つけて", "output": "AC_ON(mode='cool')"}
+{"instruction": "お湯沸かして", "output": "KETTLE_SET(temperature=100, unit='celsius')"}
+{"instruction": "ご飯炊いて", "output": "RICE_COOKER_SET(mode='standard')"}
+{"instruction": "部屋あっためて", "output": "AC_ON(mode='heat')\nFLOOR_HEAT_ON(room='living')"}
+{"instruction": "涼しくして", "output": "AC_ON(mode='cool')\nFAN_ON(device='circulator', mode='auto')"}
+{"instruction": "乾燥してる", "output": "HUMIDIFIER_ON(mode='auto')"}
+{"instruction": "じめじめする", "output": "DEHUMIDIFIER_ON(mode='auto')"}
+{"instruction": "空気悪い", "output": "AIR_PURIFIER_ON(mode='turbo')\nVENTILATE(mode='auto', duration=10, unit='minutes')"}
+{"instruction": "もう寝る", "output": "SCENE_ACTIVATE(scene='goodnight', actions=['LIGHT_OFF(all)','AC_SET(mode=sleep)','CURTAIN_CLOSE','TV_OFF'])"}
